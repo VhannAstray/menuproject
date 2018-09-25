@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxSmartModalModule, NgxSmartModalService  } from 'ngx-smart-modal';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PopupComponent } from './components/popup/popup.component';
@@ -12,21 +13,30 @@ import { LayoutComponent } from './modules/ui/layout/layout.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { DetailrecettesComponent } from './components/detailrecettes/detailrecettes.component';
 
+const appRoutes: Routes = [
+  { path: 'calendar', component: CalendarComponent },
+  { path: 'app-detailrecettes',      component: DetailrecettesComponent }
+];
+
 @NgModule({
   declarations: [
     PopupComponent,
     ContenuPopComponent,
-    AppelPopComponent
+    AppelPopComponent,
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LayoutComponent
-    CalendarComponent
+    LayoutComponent,
+    CalendarComponent,
     DetailrecettesComponent
   ],
   imports: [
     BrowserModule,
-    NgxSmartModalModule.forRoot()
+    NgxSmartModalModule.forRoot(),
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [NgxSmartModalService],
   bootstrap: [AppComponent]
