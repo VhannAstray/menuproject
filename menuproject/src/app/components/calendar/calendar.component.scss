@@ -1,8 +1,9 @@
 .btn {
     margin-top: 30px;
     margin-bottom: 2em;
-    background-color: #3fb3a3;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(70, 70, 70);
+    border: #7c7c7c solid .1em;
 }
 .entete {
     text-align: center;
@@ -21,15 +22,20 @@
 }
 
 .starter {
-    background-color: rgb(253, 200, 179);
+    background-color: #04a3a3;
+    font-weight: 650;
+    color:#ffffff;
 }
-
 .mainmeal {
-    background-color: #c7f5ef;
+    background-color: #F0A202;
+    font-weight: 650;
+    color: #ffffff;
 }
 
 .dessert {
-    background-color: #e7e7e7;
+    background-color: #aa0536;
+    font-weight: 620;
+    color:#ffffff;
 }
 
 .inside {
