@@ -19,11 +19,9 @@ import { DontcookComponent } from './components/dontcook/dontcook.component';
 
 
 
-import { TestService } from './shared/services/test.service';
-
 const appRoutes: Routes = [
   { path: 'calendar', component: CalendarComponent },
-  { path: 'app-detailrecettes',      component: DetailrecettesComponent },
+  { path: 'app-detailrecettes', component: DetailrecettesComponent },
   { path: 'app-recettes', component: RecettesComponent}
 ];
 

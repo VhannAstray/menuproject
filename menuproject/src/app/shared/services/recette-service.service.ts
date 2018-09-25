@@ -21,7 +21,6 @@ export class RecetteService {
     if (id !== null) {
       return this._api.get<RecetteInterface[]>(Constants._API_ROOT + '/' + id);
     } else {
-      console.log('Il est passe par ici');
       return this._api.get<RecetteInterface[]>(
         Constants._API_ROOT
       );
