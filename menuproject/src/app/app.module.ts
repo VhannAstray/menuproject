@@ -10,6 +10,7 @@ import { HeaderComponent } from './modules/ui/header/header.component';
 import { FooterComponent } from './modules/ui/footer/footer.component';
 import { LayoutComponent } from './modules/ui/layout/layout.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { DetailrecettesComponent } from './components/detailrecettes/detailrecettes.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     FooterComponent,
     LayoutComponent
     CalendarComponent
+    DetailrecettesComponent
   ],
   imports: [
     BrowserModule,
