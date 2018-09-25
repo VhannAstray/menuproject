@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSmartModalService } from 'ngx-smart-modal';
+import { RecetteInterface } from './../../shared/interfaces/recette-interface';
 
 @Component({
   selector: 'app-recettes',
