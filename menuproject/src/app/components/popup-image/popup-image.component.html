@@ -1,17 +1,14 @@
-<!-- Creation de la popup  avec identifiant ''popupImage-->
-<ngx-smart-modal #popupImg1 identifier="popupImg1">
+<!-- Creation de la popup  avec identifiant ''popupOne-->
+<ngx-smart-modal #popupImg identifier="popupImg">
     <div class="container myPop">
       
     
       <ul>
        
+        <app-detailrecettes></app-detailrecettes>
         
-        <img src="./../../../assets/quiche saumon-poireaux.jpg" 
-          
-        class="img-fluid" 
-        alt="image à insérer">
         
       </ul>
-      <button (click)="popupImg1.close()">Close</button>
+      <button (click)="popupImg.close()">Close</button>
     </div>
   </ngx-smart-modal>
