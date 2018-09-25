@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSmartModalService } from 'ngx-smart-modal';
+import { RecetteService } from './../../shared/services/recette-service.service';
 import { RecetteInterface } from './../../shared/interfaces/recette-interface';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-recettes',
@@ -10,9 +13,17 @@ import { RecetteInterface } from './../../shared/interfaces/recette-interface';
 export class RecettesComponent implements OnInit {
 
   public recettes: RecetteInterface[];
+  private recettesSubscription: Subscription;
 
-  constructor(public ngxSmartModalService: NgxSmartModalService) {
-    this.recettes = [
+  constructor(public ngxSmartModalService: NgxSmartModalService, private recetteService: RecetteService) {
+    console.log('Hello Recette Component');
+    this.recettesSubscription = this.recetteService.getRecettes().subscribe((recettes) => {
+      console.log('test ' + recettes.length);
+      this.recettes = recettes;
+    });
+
+
+    /*this.recettes = [
       {
         titre: 'Recette 1',
         instructions: 'Faire ca',
@@ -37,7 +48,7 @@ export class RecettesComponent implements OnInit {
         nombrePersonnes: 3,
         typeMeal: 3
       }
-    ];
+    ];*/
   }
 
   ngOnInit() {
