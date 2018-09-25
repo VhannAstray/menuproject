@@ -1,11 +1,5 @@
 
 
-<!-- Appel component de la popup -->
-<app-popup-image></app-popup-image>
-
-<!-- Déclenche l'appel de la popup qui est dans le popup component avec l'identifiant 'popup one'-->
-<button (click)="ngxSmartModalService.getModal('popupImg').open()">Zoom</button>
-
 
       
       
@@ -15,12 +9,13 @@
           </div>
           </blockquote>
           
-       <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="./../../../assets/quiche saumon-poireaux.jpg" alt="Card image cap" >
-         
-        </div>
+       
+        
+       
+          <img src="..."  >
         
           <blockquote class="blockquote text-right">
+             
               <div class="card-body">
               <p class="mb-0"> Temps de préparation: {{recette.tempsPreparation}}</p>
               </div>
@@ -42,9 +37,8 @@
               Déroulement de la recette: {{recette.instructions}}
             </p>
           
-          </blockquote>
-
-         
+          </blockquote>  
+          
 
 
 

@@ -15,7 +15,7 @@ import { DetailrecettesComponent } from './components/detailrecettes/detailrecet
 import { RecettesComponent } from './components/recettes/recettes.component';
 import { DontcookComponent } from './components/dontcook/dontcook.component';
 
-import { PopupImageComponent } from './components/popup-image/popup-image.component';
+
 
 const appRoutes: Routes = [
   { path: 'calendar', component: CalendarComponent },
@@ -35,7 +35,7 @@ const appRoutes: Routes = [
     CalendarComponent,
     DetailrecettesComponent,
     DontcookComponent,
-    PopupImageComponent,
+    
     RecettesComponent
   ],
   imports: [
