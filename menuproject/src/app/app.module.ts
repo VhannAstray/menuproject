@@ -27,7 +27,10 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    RecettesComponent
+    RecettesComponent,
+    CalendarComponent,
+    DetailrecettesComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
