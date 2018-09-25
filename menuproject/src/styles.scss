@@ -2,3 +2,10 @@
 $fa-font-path : '../node_modules/font-awesome/fonts';
 @import "~bootstrap/scss/bootstrap.scss";
 @import "~font-awesome/scss/font-awesome.scss";
+//$dialog-position-top: 20%;
+//$transition-duration: 1ms;
+
+@import "~ngx-smart-modal/ngx-smart-modal";
+.nsm-dialog {
+    max-width: 80%;
+}
