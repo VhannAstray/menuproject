@@ -1,9 +1,16 @@
+.btn {
+    margin-top: 30px;
+    margin-bottom: 2em;
+    background-color: #3fb3a3;
+    color: white;
+}
 .entete {
     text-align: center;
 }
 .day {
     color: #7c7c7c;
     font-weight: 600;
+    border: white 0px;
 }
 .type {
     text-align: center;
@@ -25,8 +32,8 @@
     background-color: #e7e7e7;
 }
 
-div {
-    height: 7em;
+.inside {
+    height: 10em;
     width: 7em;
     padding: 6%;
     margin: 6%;

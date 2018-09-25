@@ -12,8 +12,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LayoutComponent
-    CalendarComponent
+    LayoutComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule
