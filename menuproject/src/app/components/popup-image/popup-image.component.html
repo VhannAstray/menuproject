@@ -1,0 +1,14 @@
+<!-- Creation de la popup  avec identifiant ''popupOne-->
+<ngx-smart-modal #popupImg identifier="popupImg">
+    <div class="container myPop">
+      
+    
+      <ul>
+       
+        <app-detailrecettes></app-detailrecettes>
+        
+        
+      </ul>
+      <button (click)="popupImg.close()">Close</button>
+    </div>
+  </ngx-smart-modal>

@@ -15,6 +15,9 @@ import { LayoutComponent } from './modules/ui/layout/layout.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { DetailrecettesComponent } from './components/detailrecettes/detailrecettes.component';
 import { RecettesComponent } from './components/recettes/recettes.component';
+import { DontcookComponent } from './components/dontcook/dontcook.component';
+
+import { PopupImageComponent } from './components/popup-image/popup-image.component';
 
 import { TestService } from './shared/services/test.service';
 
@@ -35,7 +38,9 @@ const appRoutes: Routes = [
     LayoutComponent,
     CalendarComponent,
     DetailrecettesComponent,
-    RecettesComponent,
+    DontcookComponent,
+    PopupImageComponent,
+    RecettesComponent
   ],
   imports: [
     BrowserModule,
