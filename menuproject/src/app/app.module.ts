@@ -13,6 +13,7 @@ import { LayoutComponent } from './modules/ui/layout/layout.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { DetailrecettesComponent } from './components/detailrecettes/detailrecettes.component';
 import { RecettesComponent } from './components/recettes/recettes.component';
+import { DontcookComponent } from './components/dontcook/dontcook.component';
 
 const appRoutes: Routes = [
   { path: 'calendar', component: CalendarComponent },
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     CalendarComponent,
     DetailrecettesComponent,
     RecettesComponent,
+    DontcookComponent,
   ],
   imports: [
     BrowserModule,
