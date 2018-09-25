@@ -16,7 +16,8 @@ import { RecettesComponent } from './components/recettes/recettes.component';
 
 const appRoutes: Routes = [
   { path: 'calendar', component: CalendarComponent },
-  { path: 'app-detailrecettes',      component: DetailrecettesComponent }
+  { path: 'app-detailrecettes',      component: DetailrecettesComponent },
+  { path: 'app-recettes', component: RecettesComponent}
 ];
 
 @NgModule({
