@@ -1,3 +1,26 @@
+<div class="container">
+
+    <ul>
+        <li *ngFor="let recette of recettes" class="recetteAll">
+            <div>
+                <span>{{recette.titre}}</span>
+            </div>
+            <div>
+                <span>{{recette.instructions}}</span>
+            </div>
+            <div>
+                <span>{{recette.tempsCuisson}}min</span>
+            </div>
+            <div>
+                <button class="btn btn-info">Bouton détails.</button>   
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+
+
 <!-- Appel component de la popup -->
 <app-popup></app-popup>
 <!-- Déclenche l'appel de la popup qui est dans le popup component avec l'identifiant 'popup one'-->
