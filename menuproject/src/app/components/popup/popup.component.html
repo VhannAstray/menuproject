@@ -1,8 +1,13 @@
-<ngx-smart-modal #popupOne [identifier]="'popupOne'">
-  <h1>Title 1</h1>
-  <p>Hello</p>
-  <ul>
-    <app-contenu-pop></app-contenu-pop>
-  </ul>
-  <button (click)="popupOne.close()">Close</button>
+<!-- Creation de la popup  avec identifiant ''popupOne-->
+<ngx-smart-modal #popupOne identifier="popupOne">
+  <div class="container myPop">
+    <h1>Title : Je suis le component popup</h1>
+    <p>J'ai des boutons et j'inclus un autre component :</p>
+    <ul>
+      Ici j'appele un autre component app-contenu-app:
+      <app-contenu-pop></app-contenu-pop>
+      Fin du component externe.
+    </ul>
+    <button (click)="popupOne.close()">Close</button>
+  </div>
 </ngx-smart-modal>

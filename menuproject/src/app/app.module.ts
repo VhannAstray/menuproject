@@ -5,12 +5,14 @@ import { NgxSmartModalModule, NgxSmartModalService  } from 'ngx-smart-modal';
 import { AppComponent } from './app.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { ContenuPopComponent } from './components/contenu-pop/contenu-pop.component';
+import { AppelPopComponent } from './components/appel-pop/appel-pop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PopupComponent,
-    ContenuPopComponent
+    ContenuPopComponent,
+    AppelPopComponent
   ],
   imports: [
     BrowserModule,

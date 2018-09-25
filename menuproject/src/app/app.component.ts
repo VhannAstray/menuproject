@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NgxSmartModalService } from 'ngx-smart-modal';
+
+
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 })
 export class AppComponent {
   title = 'menuproject';
-  constructor (public ngxSmartModalService: NgxSmartModalService) {}
+  constructor () {}
 }
 
 
