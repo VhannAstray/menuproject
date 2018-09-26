@@ -1,8 +1,11 @@
 <div class="container">
     <div class="container btnSort">
-        <button type="button" class="btn btnEntree" (click)="sortRecette(1)">{{typeMeal[1].libelle}}</button>
-        <button type="button" class="btn btnPlat" (click)="sortRecette(2)">{{typeMeal[2].libelle}}</button>
-        <button type="button" class="btn btnDessert" (click)="sortRecette(3)">{{typeMeal[0].libelle}}</button>
+        <ng-container *ngIf="typeMeal === null; else btns">Type de plat non indiqué </ng-container>
+        <ng-template #btns>
+            <button type="button" class="btn btnEntree" (click)="sortRecette(1)">{{typeMealLabel[1]}}</button>
+            <button type="button" class="btn btnPlat" (click)="sortRecette(2)">{{typeMealLabel[2]}}</button>
+            <button type="button" class="btn btnDessert" (click)="sortRecette(3)">{{typeMealLabel[0]}}</button>
+        </ng-template>
     </div>
 
 
@@ -12,14 +15,29 @@
                     {{recette.titre}}
                 </div>
                 <div>
+                    <ng-container *ngIf="recette.typeMeal === null; else second">Type de plat non indiqué </ng-container>
+                    <ng-template #second>
+                        <ng-container *ngIf="recette.typeMeal === 1; else third">Type de plat : {{typeMealLabel[1]}}</ng-container>
+                    </ng-template> 
+                    <ng-template #third>
+                        <ng-container *ngIf="recette.typeMeal === 2; else fourth">Type de plat : {{typeMealLabel[2]}}</ng-container>
+                    </ng-template>
+                    <ng-template #fourth>
+                        <ng-container *ngIf="recette.typeMeal === 3">Type de plat : {{typeMealLabel[0]}} </ng-container>
+                    </ng-template>
+                </div>
+                <!--<div>
                     <ng-container *ngIf="recette.typeMeal === 1; else second">Type de plat : {{typeMeal[1].libelle}}</ng-container>
                     <ng-template #second>
                         <ng-container *ngIf="recette.typeMeal === 2; else third">Type de plat : {{typeMeal[2].libelle}}</ng-container>
                     </ng-template> 
                     <ng-template #third>
-                        <ng-container>Type de plat : {{typeMeal[0].libelle}}</ng-container>
+                        <ng-container *ngIf="recette.typeMeal === 3; else fourth">Type de plat : {{typeMeal[0].libelle}}</ng-container>
                     </ng-template>
-                </div>
+                    <ng-template #fourth>
+                        <ng-container>Type de plat non indiqué </ng-container>
+                    </ng-template>
+                </div>-->
                 <div>
                     {{recette.instructions}}
                 </div>
