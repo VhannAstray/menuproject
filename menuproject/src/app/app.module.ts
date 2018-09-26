@@ -37,7 +37,7 @@ const appRoutes: Routes = [
     DetailrecettesComponent,
     DontcookComponent,
     PopupcalendarComponent,
-    CarterecetteComponent
+    CarterecetteComponent,
     AjoutrecetteComponent,
     RecettesComponent
   ],
