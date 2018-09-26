@@ -1,0 +1,20 @@
+<div class="container">
+  <div>
+    <span class="titre">{{recette.titre}}</span>
+  </div>
+  <!--div>
+    <span class="img"><img src="../../assets/crepe.jpg"></span>
+  </div-->
+  <div>
+    <span class="typemeal">Type de plat : {{recette.typeMeal}}</span>
+  </div>
+  <div>
+    <span class="etape">Etapes : {{recette.instructions}}</span>
+  </div>
+  <div>
+    <span class="tps">Temps de cuisson : {{recette.tempsCuisson}}min</span>
+  </div>
+  <div>
+      <button class="btn btn-info" (click)="ngxSmartModalService.getModal('popupOne').open()">Détails</button>   
+  </div>
+</div>

@@ -1,27 +1,56 @@
 <div class="container">
     <div class="container btnSort">
-        <button type="button" class="btn btnEntree" (click)="sortRecette(1)">Entrée</button>
-        <button type="button" class="btn btnPlat" (click)="sortRecette(2)">Plat</button>
-        <button type="button" class="btn btnDessert" (click)="sortRecette(3)">Desserts</button>
+        <ng-container *ngIf="typeMeal === null; else btns">Type de plat non indiqué </ng-container>
+        <ng-template #btns>
+            <button type="button" class="btn btnEntree" (click)="sortRecette(1)">{{typeMealLabel[1]}}</button>
+            <button type="button" class="btn btnPlat" (click)="sortRecette(2)">{{typeMealLabel[2]}}</button>
+            <button type="button" class="btn btnDessert" (click)="sortRecette(3)">{{typeMealLabel[0]}}</button>
+        </ng-template>
     </div>
 
 
     <ul>
         <li *ngFor="let recette of recettesSorted" class="recetteAll">
-                <div>
-                    <span>{{recette.titre}}</span>
+                <div class="titreRecette">
+                    {{recette.titre}}
                 </div>
                 <div>
-                    <span>Type de plat : {{recette.typeMeal}}</span>
+                    <ng-container *ngIf="recette.typeMeal === null; else second">Type de plat non indiqué </ng-container>
+                    <ng-template #second>
+                        <ng-container *ngIf="recette.typeMeal === 1; else third">Type de plat : {{typeMealLabel[1]}}</ng-container>
+                    </ng-template> 
+                    <ng-template #third>
+                        <ng-container *ngIf="recette.typeMeal === 2; else fourth">Type de plat : {{typeMealLabel[2]}}</ng-container>
+                    </ng-template>
+                    <ng-template #fourth>
+                        <ng-container *ngIf="recette.typeMeal === 3">Type de plat : {{typeMealLabel[0]}} </ng-container>
+                    </ng-template>
+                </div>
+                <!--<div>
+                    <ng-container *ngIf="recette.typeMeal === 1; else second">Type de plat : {{typeMeal[1].libelle}}</ng-container>
+                    <ng-template #second>
+                        <ng-container *ngIf="recette.typeMeal === 2; else third">Type de plat : {{typeMeal[2].libelle}}</ng-container>
+                    </ng-template> 
+                    <ng-template #third>
+                        <ng-container *ngIf="recette.typeMeal === 3; else fourth">Type de plat : {{typeMeal[0].libelle}}</ng-container>
+                    </ng-template>
+                    <ng-template #fourth>
+                        <ng-container>Type de plat non indiqué </ng-container>
+                    </ng-template>
+                </div>-->
+                <div>
+                    {{recette.instructions}}
                 </div>
                 <div>
-                    <span>{{recette.instructions}}</span>
+                    <i class="fa fa-clock-o"></i>
+                    Temps de préparation : {{recette.tempsPreparation}}min
                 </div>
                 <div>
-                    <span>Temps de cuisson : {{recette.tempsCuisson}}min</span>
+                    <i class="fa fa-clock-o"></i>
+                    Temps de cuisson : {{recette.tempsCuisson}}min
                 </div>
                 <div>
-                    <button class="btn btn-info" (click)="ngxSmartModalService.getModal('popupOne').open()">Détails</button>   
+                    <button class="btn btn-info" (click)="detailId(recette.id)">Détails</button>   
                 </div>
         </li>
     </ul>
