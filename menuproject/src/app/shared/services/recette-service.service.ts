@@ -4,6 +4,7 @@ import { Observable, Subject } from 'rxjs';
 // import constants
 import { Constants } from './../constants/constants';
 import { RecetteInterface } from './../../shared/interfaces/recette-interface';
+import { TypePlat } from '../interfaces/type-plat';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,11 @@ export class RecetteService {
    * observable subject de type RecetteInterface, utilisé pour diffuser les données venant de la bdd
    */
   private recetteSubject: Subject<RecetteInterface[]> = new Subject<RecetteInterface[]>();
+
+  /**
+   * observale subject de type TypePlat Interface, utilisé pour diffuser les données de la table type plat de la bdd
+   */
+  private typePlatSubject: Subject<TypePlat> = new Subject<TypePlat>();
 
   /**
    * observable subject de type number, utilisé pour diffuser l'identifiant de la recette
@@ -35,6 +41,19 @@ export class RecetteService {
     // sinon on retourne toutes les recettes
       return this._api.get<RecetteInterface[]>(
         Constants._API_ROOT
+      );
+    }
+  }
+
+  public getTypePlat(id: number = null): Observable<TypePlat> {
+    // si l'id est different de null alors on demande une seule recette avec l'identifiant donné
+    if (id !== null) {
+      console.log('pass par id de plat : ' + id);
+      return this._api.get<TypePlat>(Constants._API_TYPES_PLATS + '/' + id);
+    } else {
+    // sinon on retourne toutes les recettes
+      return this._api.get<TypePlat>(
+        Constants._API_TYPES_PLATS
       );
     }
   }

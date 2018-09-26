@@ -1,8 +1,8 @@
 <div class="container">
     <div class="container btnSort">
-        <button type="button" class="btn btnEntree" (click)="sortRecette(1)">Entrée</button>
-        <button type="button" class="btn btnPlat" (click)="sortRecette(2)">Plat</button>
-        <button type="button" class="btn btnDessert" (click)="sortRecette(3)">Desserts</button>
+        <button type="button" class="btn btnEntree" (click)="sortRecette(1)">{{typeMeal[1].libelle}}</button>
+        <button type="button" class="btn btnPlat" (click)="sortRecette(2)">{{typeMeal[2].libelle}}</button>
+        <button type="button" class="btn btnDessert" (click)="sortRecette(3)">{{typeMeal[0].libelle}}</button>
     </div>
 
 

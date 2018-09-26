@@ -38,9 +38,7 @@ const appRoutes: Routes = [
     CalendarComponent,
     DetailrecettesComponent,
     DontcookComponent,
-    
     RecettesComponent,
-    
     PopupcalendarComponent
   ],
   imports: [

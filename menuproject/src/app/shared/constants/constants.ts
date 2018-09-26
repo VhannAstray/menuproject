@@ -1,12 +1,12 @@
 export class Constants {
     /**
      * Constante de l'URI qui gère les recettes.
-     * 
+     *
      * GET : Renvoi la liste des recettes sous la forme d'un tableau JSON
      *      - Si on lui transmet l'id en paramètre dans l'URI
      *      example : http://192.168.2.115:3000/recettes/2
      *      renvoi un tableau Json de la recette numéro 2 en id.
-     * 
+     *
      * POST : Ajoute la recette fourni en paramètre JSON
      * {
             "titre": "Plat à supprimer",
@@ -18,7 +18,7 @@ export class Constants {
         }
         Remarque : L'utilisateur est toujours à 0 dans le backend,
          on prévoit qu'un utilisateur pour le moment.
-        
+
         PUT : Met à jour juste le titre de la recette, à modifier en fonction du besoin coté BACKEND
         Exemple : http://192.168.2.115:3000/recettes/2
         {
@@ -53,15 +53,15 @@ export class Constants {
 
      /**
      * Constante de l'URI qui permet d'ajouter une recette sur un planning
-     * Il faut un paramètre JSON en mode POST: 
+     * Il faut un paramètre JSON en mode POST:
      *   {
      *       "planning_id": 1, // Le planning correspondant à la journée
      *       "recettes_id": 6, // La recette en question
      *       "is_midi": 1  // si c'est une recette du midi ou du soir, 1 pour midi, 0 pour le soir
      *   }
-     * 
+     *
      * En mode DELETE, il supprime la recette du planning transmis en tableau JSON
-     *  
+     *
      * Il faut obligatoirement fournir les 3 paramètres sinon risque de delete des recettes du planning de manière indésirable.
      */
     public static get _API_MENU_PLANNING(): string {
