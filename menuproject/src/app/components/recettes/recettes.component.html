@@ -12,7 +12,13 @@
                     <span>{{recette.titre}}</span>
                 </div>
                 <div>
-                    <span>Type de plat : {{recette.typeMeal}}</span>
+                    <ng-container *ngIf="recette.typeMeal === 1; else second">Type de plat : {{typeMeal[1].libelle}}</ng-container>
+                    <ng-template #second>
+                        <ng-container *ngIf="recette.typeMeal === 2; else third">Type de plat : {{typeMeal[2].libelle}}</ng-container>
+                    </ng-template> 
+                    <ng-template #third>
+                        <ng-container>Type de plat : {{typeMeal[0].libelle}}</ng-container>
+                    </ng-template>
                 </div>
                 <div>
                     <span>{{recette.instructions}}</span>

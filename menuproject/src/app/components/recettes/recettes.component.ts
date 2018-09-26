@@ -20,10 +20,9 @@ export class RecettesComponent implements OnInit {
   private typePlatSubscription: Subscription;
 
   constructor(public ngxSmartModalService: NgxSmartModalService, private recetteService: RecetteService) {
-    console.log('Hello Recette Component');
+
     this.recettesSorted = [];
     this.recettesSubscription = this.recetteService.getRecettes().subscribe((recettes) => {
-      console.log('test ' + recettes.length);
       this.recettes = recettes;
       this.sortRecette(1);
     });
@@ -42,8 +41,6 @@ export class RecettesComponent implements OnInit {
           this.recettesSorted.push(r);
       }
     }
-
-    console.log('liste triée : ' + JSON.stringify(this.recettesSorted));
   }
 
   public detailId(id: number): void {
