@@ -9,17 +9,16 @@ import { AppComponent } from './app.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { ContenuPopComponent } from './components/contenu-pop/contenu-pop.component';
 import { AppelPopComponent } from './components/appel-pop/appel-pop.component';
-import { HeaderComponent } from './modules/ui/header/header.component';
-import { FooterComponent } from './modules/ui/footer/footer.component';
-import { LayoutComponent } from './modules/ui/layout/layout.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { DetailrecettesComponent } from './components/detailrecettes/detailrecettes.component';
 import { RecettesComponent } from './components/recettes/recettes.component';
 import { DontcookComponent } from './components/dontcook/dontcook.component';
 
 
+import { UiModule } from './modules/ui/ui.module';
 
 const appRoutes: Routes = [
+  { path: '', component: CalendarComponent},
   { path: 'calendar', component: CalendarComponent },
   { path: 'app-detailrecettes', component: DetailrecettesComponent },
   { path: 'app-recettes', component: RecettesComponent}
@@ -31,18 +30,15 @@ const appRoutes: Routes = [
     ContenuPopComponent,
     AppelPopComponent,
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    LayoutComponent,
     CalendarComponent,
     DetailrecettesComponent,
     DontcookComponent,
-    
     RecettesComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    UiModule,
     NgxSmartModalModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
