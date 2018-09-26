@@ -1,8 +1,9 @@
 .btn {
     margin-top: 30px;
     margin-bottom: 2em;
-    background-color: #3fb3a3;
-    color: white;
+    background-color: #ffffff;
+    color: #474747;
+    border: .1em solid #474747;
 }
 .entete {
     text-align: center;
@@ -21,21 +22,35 @@
 }
 
 .starter {
-    background-color: rgb(253, 200, 179);
+    background-color: #ffffff;
+    box-shadow: .1px 1px 2px #979797;
+    font-weight: 650;
+    color:#04a3a3;
 }
-
 .mainmeal {
-    background-color: #c7f5ef;
+    background-color: #ffffff;
+box-shadow: .1px 1px 2px #979797;
+    font-weight: 650;
+    color: #e4572e;
 }
 
 .dessert {
-    background-color: #e7e7e7;
+    background-color: #ffffff;
+    box-shadow: .1px 1px 2px #979797;
+    font-weight: 620;
+    color:#db9d47;
 }
 
 .inside {
-    height: 8em;
+    height: 9.8em;
     width: 7em;
     padding: 6%;
     margin: 6%;
     border-radius: 4%;
+}
+
+table {
+    margin-bottom: 5em;
+    margin-top: 30px;
+    text-align: center;
 }
