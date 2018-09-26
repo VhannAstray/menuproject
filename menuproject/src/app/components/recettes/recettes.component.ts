@@ -13,15 +13,17 @@ import { Subscription } from 'rxjs';
 export class RecettesComponent implements OnInit {
 
   public recettes: RecetteInterface[];
+  public recettesSorted: RecetteInterface[];
   private recettesSubscription: Subscription;
 
   constructor(public ngxSmartModalService: NgxSmartModalService, private recetteService: RecetteService) {
     console.log('Hello Recette Component');
+    this.recettesSorted = [];
     this.recettesSubscription = this.recetteService.getRecettes().subscribe((recettes) => {
       console.log('test ' + recettes.length);
       this.recettes = recettes;
+      this.sortRecette(1);
     });
-
 
     /*this.recettes = [
       {
@@ -52,6 +54,17 @@ export class RecettesComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  public sortRecette(typeMeal: number): any {
+    this.recettesSorted = [];
+    for (const r of this.recettes) {
+      if (r.typeMeal === typeMeal) {
+          this.recettesSorted.push(r);
+      }
+    }
+
+    console.log('liste triée : ' + JSON.stringify(this.recettesSorted));
   }
 
 }
