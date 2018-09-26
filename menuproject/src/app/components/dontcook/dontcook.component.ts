@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// import service de popup
+import { NgxSmartModalService } from 'ngx-smart-modal';
 
 @Component({
   selector: 'dontcook',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DontcookComponent implements OnInit {
 
-  constructor() { }
+  // injection du service de popup dans le constructeur
+  constructor(public ngxSmartModalService: NgxSmartModalService) { }
 
   ngOnInit() {
   }
