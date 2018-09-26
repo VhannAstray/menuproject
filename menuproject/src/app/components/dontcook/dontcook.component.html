@@ -3,7 +3,12 @@
   <div class="word">
     Je ne cuisine pas
   </div>
-  <button type="button" class="btn btn-link"><i class="fa fa-plus-circle"></i></button>
+
+  <!-- Appel component de la popup -->
+  <app-popupcalendar></app-popupcalendar>
+
+  <!-- le (clik) déclenche l'appel de la popup qui est dans le popup component avec l'identifiant 'popup one'-->
+  <button type="button" class="btn btn-link" (click)="ngxSmartModalService.getModal('popupAjoutRecette').open()"><i class="fa fa-plus-circle"></i></button>
 
 </div>
 
