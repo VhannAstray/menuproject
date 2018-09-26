@@ -60,9 +60,11 @@
                                         <div class=" inside mainmeal">Plat
                                                 <div *ngFor="let recette of recettesSemaine[number]">
                                                         <div *ngIf="recette.typeMeal==2 && recette.is_midi == 0;">
-                                                                <span>{{recette.titre}}</span>
+                                                                       
                                                         </div>
+                                                       
                                                 </div>
+                                                <dontcook></dontcook>
                                         </div>
                                         <div class=" inside dessert">Dessert
                                                 <div *ngFor="let recette of recettesSemaine[number]">
