@@ -1,14 +1,13 @@
-<!-- Creation de la popup  avec identifiant ''popupOne-->
+<!-- Creation de la popup  avec identifiant ''popupcalendar-->
+<!-- Component parent : dontcook.html -->
+<!-- Chemin complet pour y avoir accès : dontcook.html/popupcalendar.html -->
 <ngx-smart-modal #popupcalendar identifier="popupcalendar">
-    <div class="container myPop">
-      
-    
+    <div class="container myPop">  
       <ul>
        
         <app-ajoutrecette></app-ajoutrecette>
-        
-      sirjgoeji  
+
       </ul>
-      <button class="btn btn-info" (click)="popupcalendar.close()">Close</button>
+      <button class="btn" (click)="popupcalendar.close()">Close</button>
     </div>
   </ngx-smart-modal>

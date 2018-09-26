@@ -18,6 +18,7 @@ import { RecettesComponent } from './components/recettes/recettes.component';
 import { DontcookComponent } from './components/dontcook/dontcook.component';
 import { PopupcalendarComponent } from './components/popupcalendar/popupcalendar.component';
 import { AjoutrecetteComponent } from './components/ajoutrecette/ajoutrecette.component';
+import { CarterecetteComponent } from './components/carterecette/carterecette.component';
 
 
 
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     DontcookComponent,
     RecettesComponent,
     PopupcalendarComponent,
-    AjoutrecetteComponent
+    AjoutrecetteComponent,
+    CarterecetteComponent
   ],
   imports: [
     BrowserModule,
