@@ -43,7 +43,15 @@ export class Constants {
         return 'http://192.168.2.115:3000/recettes/date/';
     }
 
-        /**
+    /**
+     * Constante de l'URI qui renvoi la liste des recettes d'un planning donné (1 planning = 1 jour).   
+     * Il faut un paramètre genre : http://127.0.0.1:3000/recettes/idPlanning/3
+     */
+    public static get _API_ROOT_PLANNING(): string {
+        return 'http://192.168.2.115:3000/recettes/idPlanning/';
+    }
+
+    /**
      * Constante de l'URI qui renvoi la liste des types de plats.
      * Renvoi tous les plats sans paramètre et 1 type de plat lorsqu'un id est transmis.
      */

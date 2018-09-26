@@ -73,4 +73,14 @@ export class RecetteService {
   public getId(): Observable <number> {
     return this.idSubject.asObservable();
   }
+
+  public getRecettesByPlanning(id: number = null): Observable<RecetteInterface[]> {
+    if (id !== null) {
+      return this._api.get<RecetteInterface[]>(Constants._API_ROOT_PLANNING + id);
+    } else {
+      return this._api.get<RecetteInterface[]>(
+        Constants._API_ROOT_PLANNING
+      );
+    }
+  }
 }
