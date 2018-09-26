@@ -12,7 +12,7 @@
                 <span>{{recette.tempsCuisson}}min</span>
             </div>
             <div>
-                <button class="btn btn-info">Bouton détails.</button>   
+                <button class="btn btn-info" (click)="ngxSmartModalService.getModal('popupOne').open()">Détails</button>   
             </div>
         </li>
     </ul>
@@ -23,5 +23,6 @@
 
 <!-- Appel component de la popup -->
 <app-popup></app-popup>
-<!-- Déclenche l'appel de la popup qui est dans le popup component avec l'identifiant 'popup one'-->
-<button (click)="ngxSmartModalService.getModal('popupOne').open()">Détails</button>
+
+
+

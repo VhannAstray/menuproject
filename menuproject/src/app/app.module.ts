@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { NgxSmartModalModule, NgxSmartModalService  } from 'ngx-smart-modal';
+import { RecetteService } from './shared/services/recette-service.service';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -15,9 +17,11 @@ import { DetailrecettesComponent } from './components/detailrecettes/detailrecet
 import { RecettesComponent } from './components/recettes/recettes.component';
 import { DontcookComponent } from './components/dontcook/dontcook.component';
 
+
+
 const appRoutes: Routes = [
   { path: 'calendar', component: CalendarComponent },
-  { path: 'app-detailrecettes',      component: DetailrecettesComponent },
+  { path: 'app-detailrecettes', component: DetailrecettesComponent },
   { path: 'app-recettes', component: RecettesComponent}
 ];
 
@@ -32,18 +36,23 @@ const appRoutes: Routes = [
     LayoutComponent,
     CalendarComponent,
     DetailrecettesComponent,
-    RecettesComponent,
     DontcookComponent,
+    
+    RecettesComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgxSmartModalModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: false } // <-- debugging purposes only
     )
   ],
-  providers: [NgxSmartModalService],
+  providers: [
+    NgxSmartModalService,
+    RecetteService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
