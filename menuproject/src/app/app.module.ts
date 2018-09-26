@@ -36,8 +36,8 @@ const appRoutes: Routes = [
     DetailrecettesComponent,
     DontcookComponent,
     PopupcalendarComponent,
-    AjoutrecetteComponent
-    RecettesComponent,
+    AjoutrecetteComponent,
+    RecettesComponent
   ],
   imports: [
     BrowserModule,
