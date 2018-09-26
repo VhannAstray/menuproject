@@ -21,7 +21,7 @@
                     <span>Temps de cuisson : {{recette.tempsCuisson}}min</span>
                 </div>
                 <div>
-                    <button class="btn btn-info" (click)="ngxSmartModalService.getModal('popupOne').open()">Détails</button>   
+                    <button class="btn btn-info" (click)="detailId(recette.id)">Détails</button>   
                 </div>
         </li>
     </ul>

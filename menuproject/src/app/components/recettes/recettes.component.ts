@@ -67,4 +67,15 @@ export class RecettesComponent implements OnInit {
     console.log('liste triée : ' + JSON.stringify(this.recettesSorted));
   }
 
+  public detailId(id: number): void {
+    this.ngxSmartModalService.getModal('popupOne').open();
+    this.recetteService.sendId(id);
+    console.log('Id send is : ' + id);
+  }
+
+  public open(): void {
+    console.log('All your stuff here');
+    this.ngxSmartModalService.getModal('popupOne').open();
+  }
+
 }
