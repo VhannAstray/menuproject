@@ -22,6 +22,9 @@ export class RecettesComponent implements OnInit {
   constructor(public ngxSmartModalService: NgxSmartModalService, private recetteService: RecetteService) {
 
     this.recettesSorted = [];
+    this.typeMeal = {
+      libelle: ''
+    };
     this.recettesSubscription = this.recetteService.getRecettes().subscribe((recettes) => {
       this.recettes = recettes;
       this.sortRecette(1);

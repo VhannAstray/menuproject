@@ -8,8 +8,8 @@
 
     <ul>
         <li *ngFor="let recette of recettesSorted" class="recetteAll">
-                <div>
-                    <span>{{recette.titre}}</span>
+                <div class="titreRecette">
+                    {{recette.titre}}
                 </div>
                 <div>
                     <ng-container *ngIf="recette.typeMeal === 1; else second">Type de plat : {{typeMeal[1].libelle}}</ng-container>
@@ -21,10 +21,15 @@
                     </ng-template>
                 </div>
                 <div>
-                    <span>{{recette.instructions}}</span>
+                    {{recette.instructions}}
                 </div>
                 <div>
-                    <span>Temps de cuisson : {{recette.tempsCuisson}}min</span>
+                    <i class="fa fa-clock-o"></i>
+                    Temps de préparation : {{recette.tempsPreparation}}min
+                </div>
+                <div>
+                    <i class="fa fa-clock-o"></i>
+                    Temps de cuisson : {{recette.tempsCuisson}}min
                 </div>
                 <div>
                     <button class="btn btn-info" (click)="detailId(recette.id)">Détails</button>   
