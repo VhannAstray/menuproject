@@ -1,8 +1,8 @@
 <div class="container">
     <div class="container btnSort">
-        <button type="button" class="btn btnEntree" (click)="sortRecette(1)">Entrée</button>
-        <button type="button" class="btn btnPlat" (click)="sortRecette(2)">Plat</button>
-        <button type="button" class="btn btnDessert" (click)="sortRecette(3)">Desserts</button>
+        <button type="button" class="btn btnEntree" (click)="sortRecette(1)">{{typeMeal[1].libelle}}</button>
+        <button type="button" class="btn btnPlat" (click)="sortRecette(2)">{{typeMeal[2].libelle}}</button>
+        <button type="button" class="btn btnDessert" (click)="sortRecette(3)">{{typeMeal[0].libelle}}</button>
     </div>
 
 
@@ -12,7 +12,13 @@
                     <span>{{recette.titre}}</span>
                 </div>
                 <div>
-                    <span>Type de plat : {{recette.typeMeal}}</span>
+                    <ng-container *ngIf="recette.typeMeal === 1; else second">Type de plat : {{typeMeal[1].libelle}}</ng-container>
+                    <ng-template #second>
+                        <ng-container *ngIf="recette.typeMeal === 2; else third">Type de plat : {{typeMeal[2].libelle}}</ng-container>
+                    </ng-template> 
+                    <ng-template #third>
+                        <ng-container>Type de plat : {{typeMeal[0].libelle}}</ng-container>
+                    </ng-template>
                 </div>
                 <div>
                     <span>{{recette.instructions}}</span>
@@ -21,7 +27,7 @@
                     <span>Temps de cuisson : {{recette.tempsCuisson}}min</span>
                 </div>
                 <div>
-                    <button class="btn btn-info" (click)="ngxSmartModalService.getModal('popupOne').open()">Détails</button>   
+                    <button class="btn btn-info" (click)="detailId(recette.id)">Détails</button>   
                 </div>
         </li>
     </ul>

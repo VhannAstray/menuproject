@@ -3,6 +3,7 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 import { RecetteService } from './../../shared/services/recette-service.service';
 import { RecetteInterface } from './../../shared/interfaces/recette-interface';
 import { Subscription } from 'rxjs';
+import { TypePlat } from '../../shared/interfaces/type-plat';
 
 
 @Component({
@@ -15,42 +16,19 @@ export class RecettesComponent implements OnInit {
   public recettes: RecetteInterface[];
   public recettesSorted: RecetteInterface[];
   private recettesSubscription: Subscription;
+  private typeMeal: TypePlat;
+  private typePlatSubscription: Subscription;
 
   constructor(public ngxSmartModalService: NgxSmartModalService, private recetteService: RecetteService) {
-    console.log('Hello Recette Component');
+
     this.recettesSorted = [];
     this.recettesSubscription = this.recetteService.getRecettes().subscribe((recettes) => {
-      console.log('test ' + recettes.length);
       this.recettes = recettes;
       this.sortRecette(1);
     });
-
-    /*this.recettes = [
-      {
-        titre: 'Recette 1',
-        instructions: 'Faire ca',
-        tempsCuisson: 10,
-        tempsPreparation: 5,
-        nombrePersonnes: 2,
-        typeMeal: 1
-      },
-      {
-        titre: 'Recette 2',
-        instructions: 'Faire autre chose',
-        tempsCuisson: 4,
-        tempsPreparation: 50,
-        nombrePersonnes: 4,
-        typeMeal: 2
-      },
-      {
-        titre: 'Recette 3',
-        instructions: 'Plein de trucs',
-        tempsCuisson: 10,
-        tempsPreparation: 10,
-        nombrePersonnes: 3,
-        typeMeal: 3
-      }
-    ];*/
+    this.typePlatSubscription = this.recetteService.getTypePlat().subscribe((typePlat) => {
+      this.typeMeal = typePlat;
+    });
   }
 
   ngOnInit() {
@@ -63,8 +41,12 @@ export class RecettesComponent implements OnInit {
           this.recettesSorted.push(r);
       }
     }
+  }
 
-    console.log('liste triée : ' + JSON.stringify(this.recettesSorted));
+  public detailId(id: number): void {
+    this.ngxSmartModalService.getModal('popupOne').open();
+    this.recetteService.sendId(id);
+    console.log('Id send is : ' + id);
   }
 
 }

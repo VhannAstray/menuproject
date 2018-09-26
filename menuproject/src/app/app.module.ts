@@ -16,6 +16,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { DetailrecettesComponent } from './components/detailrecettes/detailrecettes.component';
 import { RecettesComponent } from './components/recettes/recettes.component';
 import { DontcookComponent } from './components/dontcook/dontcook.component';
+import { PopupcalendarComponent } from './components/popupcalendar/popupcalendar.component';
 
 
 
@@ -37,8 +38,8 @@ const appRoutes: Routes = [
     CalendarComponent,
     DetailrecettesComponent,
     DontcookComponent,
-    
-    RecettesComponent
+    RecettesComponent,
+    PopupcalendarComponent
   ],
   imports: [
     BrowserModule,
