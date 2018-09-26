@@ -33,9 +33,8 @@ export class CalendarComponent implements OnInit {
         }
       });
     }
-    console.log(this.recettesSemaine);
   }
-
+  
   ngOnInit() {
   }
 
