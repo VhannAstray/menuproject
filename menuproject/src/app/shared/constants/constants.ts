@@ -48,7 +48,7 @@ export class Constants {
      * Renvoi tous les plats sans paramètre et 1 type de plat lorsqu'un id est transmis.
      */
     public static get _API_TYPES_PLATS(): string {
-        return 'http://192.168.2.115/typesPlats/';
+        return 'http://192.168.2.115:3000/typesPlats/';
     }
 
      /**
