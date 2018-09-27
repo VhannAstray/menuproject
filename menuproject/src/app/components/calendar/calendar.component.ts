@@ -83,4 +83,8 @@ export class CalendarComponent implements OnInit {
     console.log('Id send is : ' + id);
   }
 
+  public delete(param: any): any {
+    console.log(param);
+  }
+
 }
