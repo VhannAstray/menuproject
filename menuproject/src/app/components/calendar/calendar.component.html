@@ -25,7 +25,12 @@
 
                                         <div id={{number}} _1 class=" inside starter">
                                                 <p>Entrée</p>
-                                                <span *ngIf="recettesSemaine[number][1].titre !== 'vide'; else dontcook1">{{recettesSemaine[number][1].titre}}</span>
+                                                <span *ngIf="recettesSemaine[number][1].titre !== 'vide'; else dontcook1">{{recettesSemaine[number][1].titre}}
+                                                        <span>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][1].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_1_'+recettesSemaine[number][1].id)"><i class="fa fa-trash"></i></button>
+                                                        </span>
+                                                </span>
                                                 <ng-template #dontcook1>
                                                         <div class="dontcook">
                                                                 <div class="word">Je ne cuisine pas</div>
@@ -39,7 +44,13 @@
                                         </div>
                                         <div id={{number}} _2 class=" inside mainmeal">
                                                 <p>Plat</p>
-                                                <span *ngIf="recettesSemaine[number][2].titre !== 'vide'; else dontcook2">{{recettesSemaine[number][2].titre}}</span>
+                                                <span *ngIf="recettesSemaine[number][2].titre !== 'vide'; else dontcook2">{{recettesSemaine[number][2].titre}}
+                                                        <span>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][2].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_2_'+recettesSemaine[number][2].id)"><i class="fa fa-trash"></i></button>
+                                                        </span>
+                                                </span>
+
                                                 <ng-template #dontcook2>
                                                         <div class="dontcook">
                                                                 <div class="word">Je ne cuisine pas</div>
@@ -53,7 +64,13 @@
                                         </div>
                                         <div id={{number}} _3 class=" inside dessert">
                                                 <p>Dessert</p>
-                                                <span *ngIf="recettesSemaine[number][3].titre !== 'vide'; else dontcook3">{{recettesSemaine[number][3].titre}}</span>
+                                                <span *ngIf="recettesSemaine[number][3].titre !== 'vide'; else dontcook3">{{recettesSemaine[number][3].titre}}
+                                                        <span>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][3].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_3_'+recettesSemaine[number][3].id)"><i class="fa fa-trash"></i></button>
+                                                        </span>
+                                                </span>
+
                                                 <ng-template #dontcook3>
                                                         <div class="dontcook">
                                                                 <div class="word">Je ne cuisine pas</div>
@@ -75,7 +92,13 @@
 
                                         <div id={{number}} _1 class=" inside starter">
                                                 <p>Entrée</p>
-                                                <span *ngIf="recettesSemaine[number][4].titre !== 'vide'; else dontcook4">{{recettesSemaine[number][4].titre}}</span>
+                                                <span *ngIf="recettesSemaine[number][4].titre !== 'vide'; else dontcook4">{{recettesSemaine[number][4].titre}}
+                                                        <span>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][4].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_4_'+recettesSemaine[number][4].id)"><i class="fa fa-trash"></i></button>
+                                                        </span>
+                                                </span>
+
                                                 <ng-template #dontcook4>
                                                         <div class="dontcook">
                                                                 <div class="word">Je ne cuisine pas</div>
@@ -89,7 +112,13 @@
                                         </div>
                                         <div id={{number}} _2 class=" inside mainmeal">
                                                 <p>Plat</p>
-                                                <span *ngIf="recettesSemaine[number][5].titre !== 'vide'; else dontcook5">{{recettesSemaine[number][5].titre}}</span>
+                                                <span *ngIf="recettesSemaine[number][5].titre !== 'vide'; else dontcook5">{{recettesSemaine[number][5].titre}}
+                                                        <span>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][5].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_5_'+recettesSemaine[number][5].id)"><i class="fa fa-trash"></i></button>
+                                                        </span>
+                                                </span>
+
                                                 <ng-template #dontcook5>
                                                         <div class="dontcook">
                                                                 <div class="word">Je ne cuisine pas</div>
@@ -103,7 +132,13 @@
                                         </div>
                                         <div id={{number}} _3 class=" inside dessert">
                                                 <p>Dessert</p>
-                                                <span *ngIf="recettesSemaine[number][6].titre !== 'vide'; else dontcook6">{{recettesSemaine[number][6].titre}}</span>
+                                                <span *ngIf="recettesSemaine[number][6].titre !== 'vide'; else dontcook6">{{recettesSemaine[number][6].titre}}
+                                                        <span>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][6].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_6_'+recettesSemaine[number][6].id)"><i class="fa fa-trash"></i></button>
+                                                        </span>
+                                                </span>
+
                                                 <ng-template #dontcook6>
                                                         <div class="dontcook">
                                                                 <div class="word">Je ne cuisine pas</div>
@@ -124,3 +159,5 @@
 </div>
 <!-- Appel component de la popup -->
 <app-popupcalendar></app-popupcalendar>
+<!-- Appel component de la popup -->
+<app-popup></app-popup>
