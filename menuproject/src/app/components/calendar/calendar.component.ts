@@ -104,7 +104,8 @@ export class CalendarComponent implements OnInit {
     }
     this.indiceCal.recettes_id = parseInt(param.substr(4), 10);
     this.recetteService.removeRecPlanning(this.indiceCal);
-
+    console.log('Je vais essayer de supprimer ');
+    console.log(this.indiceCal);
   }
 
 }
