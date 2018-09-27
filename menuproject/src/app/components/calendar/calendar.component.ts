@@ -32,7 +32,7 @@ export class CalendarComponent implements OnInit {
         nombrePersonnes: -1,
         tempsCuisson: -1,
         tempsPreparation: -1,
-        titre: "",
+        titre: "vide",
         typeMeal: -1
       }
       // Initialisation du tableau vide.
