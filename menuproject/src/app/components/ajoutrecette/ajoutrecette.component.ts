@@ -63,8 +63,8 @@ export class AjoutrecetteComponent implements OnInit {
       // enregistre chaque libelle dans le tableau de string typeMealLabel
       // for (let i = 0; i < 3; i++ ) {
       //  this.typeMealLabel.push(this.typeMeal[i].libelle);
-     // }
-     // console.log(' les labels de plat ' + this.typeMealLabel);
+      // }
+      // console.log(' les labels de plat ' + this.typeMealLabel);
     });
 
     this.calInfoSubscription = this.recetteService.getCalInfo().subscribe((indiceCal) => {
@@ -100,4 +100,12 @@ export class AjoutrecetteComponent implements OnInit {
     }
   }
 
+  public assignRec(): void {
+    console.log("je click sur le bon bouton");
+    this.recetteService.assignRecPlanning({
+      "planning_id": 6,
+      "recettes_id": 14,
+      "is_midi": 1
+    });
+  }
 }
