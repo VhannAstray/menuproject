@@ -6,6 +6,7 @@ import { Constants } from './../constants/constants';
 import { RecetteInterface } from './../../shared/interfaces/recette-interface';
 import { TypePlat } from '../interfaces/type-plat';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -102,5 +103,25 @@ export class RecetteService {
    */
   public getCalInfo(): Observable <any> {
     return this.calInfo.asObservable();
+  }
+
+  /**
+   * Méthode pour assigner une recette sur le planning
+   * @param recette 
+   */
+  public assignRecPlanning(recette: any) {
+    this._api.post<any>(Constants._API_MENU_PLANNING,
+      recette      
+    ).subscribe();
+  }
+
+  /**
+   * Méthode pour retirer une recette du planning
+   * @param recette 
+   */
+  public removeRecPlanning(recette: any) {
+    this._api.delete(Constants._API_MENU_PLANNING,
+      recette      
+    ).subscribe();
   }
 }
