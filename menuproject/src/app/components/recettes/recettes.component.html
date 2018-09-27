@@ -2,9 +2,9 @@
     <div class="container btnSort form-inline">
         <ng-container *ngIf="typeMeal === null; else btns">Type de plat non indiqué </ng-container>
         <ng-template #btns>
-            <button type="button" class="btn btnEntree" (click)="sortRecette(1)">{{typeMealLabel[1]}}</button>
-            <button type="button" class="btn btnPlat" (click)="sortRecette(2)">{{typeMealLabel[2]}}</button>
-            <button type="button" class="btn btnDessert" (click)="sortRecette(3)">{{typeMealLabel[0]}}</button>
+            <button type="button" class="btn btnAll btnEntree" (click)="sortRecette(1)">{{typeMealLabel[1]}}</button>
+            <button type="button" class="btn btnAll btnPlat" (click)="sortRecette(2)">{{typeMealLabel[2]}}</button>
+            <button type="button" class="btn btnAll btnDessert" (click)="sortRecette(3)">{{typeMealLabel[0]}}</button>
         </ng-template>
     </div>
 
@@ -17,7 +17,7 @@
                     <div>
                         <span class="img"><img src="../../assets/crepe.jpg"></span>
                     </div>
-                    <div>
+                    <div class="miscRecette">
                         <ng-container *ngIf="recette.typeMeal === null; else second">Type de plat non indiqué </ng-container>
                         <ng-template #second>
                             <ng-container *ngIf="recette.typeMeal === 1; else third">Type de plat : {{typeMealLabel[1]}}</ng-container>
@@ -29,15 +29,15 @@
                             <ng-container *ngIf="recette.typeMeal === 3">Type de plat : {{typeMealLabel[0]}} </ng-container>
                         </ng-template>
                     </div>
-                    <div>
+                    <div class="miscRecette">
                         <i class="fa fa-user"></i>
                         Nombre de personnes : {{recette.nombrePersonnes}}
                     </div>
-                    <div>
+                    <div class="miscRecette">
                         <i class="fa fa-clock-o"></i>
                         Temps de préparation : {{recette.tempsPreparation}}min
                     </div>
-                    <div>
+                    <div class="miscRecette">
                         <i class="fa fa-clock-o"></i>
                         Temps de cuisson : {{recette.tempsCuisson}}min
                     </div>

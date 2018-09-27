@@ -15,4 +15,9 @@ export class DontcookComponent implements OnInit {
   ngOnInit() {
   }
 
+  public open(): any {
+    this.ngxSmartModalService.getModal('popupcalendar').open();
+
+  }
+
 }
