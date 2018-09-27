@@ -20,17 +20,20 @@
                                 <th scope="row" class="type dej">Déjeuner</th>
                                 <td *ngFor="let number of [1,2,3,4,5,6,7]" class="Jour">
 
-                                        <div id={{number}}_1 class=" inside starter"><p>Entrée</p>
+                                        <div id={{number}} _1 class=" inside starter">
+                                                <p>Entrée</p>
                                                 <span *ngIf="recettesSemaine[number][1].titre !== 'vide'; else dontcook">{{recettesSemaine[number][1].titre}}</span>
-                                                <ng-template #dontcook><dontcook></dontcook></ng-template>
+                                                <ng-template #dontcook>
+                                                                <app-dontcook></app-dontcook>
+                                                </ng-template>
                                         </div>
-                                        <div id={{number}}_2 class=" inside mainmeal"><p>Plat</p>
+                                        <div id={{number}} _2 class=" inside mainmeal">
+                                                <p>Plat</p>
                                                 <span *ngIf="recettesSemaine[number][2].titre !== 'vide'; else dontcook">{{recettesSemaine[number][2].titre}}</span>
-                                                <ng-template #dontcook><dontcook></dontcook></ng-template>
                                         </div>
-                                        <div id={{number}}_3 class=" inside dessert"><p>Dessert</p>
+                                        <div id={{number}} _3 class=" inside dessert">
+                                                <p>Dessert</p>
                                                 <span *ngIf="recettesSemaine[number][3].titre !== 'vide'; else dontcook">{{recettesSemaine[number][3].titre}}</span>
-                                                <ng-template #dontcook><dontcook></dontcook></ng-template>
                                         </div>
                                 </td>
                         </tr>
@@ -40,21 +43,27 @@
                                 <th scope="row" class="type dej">Dîner</th>
                                 <td *ngFor="let number of [1,2,3,4,5,6,7]" class="Jour">
 
-                                                <div id={{number}}_1 class=" inside starter"><p>Entrée</p>
-                                                        <span *ngIf="recettesSemaine[number][4].titre !== 'vide'; else dontcook">{{recettesSemaine[number][4].titre}}</span>
-                                                        <ng-template #dontcook><dontcook></dontcook></ng-template>
-                                                </div>
-                                                <div id={{number}}_2 class=" inside mainmeal"><p>Plat</p>
-                                                        <span *ngIf="recettesSemaine[number][5].titre !== 'vide'; else dontcook">{{recettesSemaine[number][5].titre}}</span>
-                                                        <ng-template #dontcook><dontcook></dontcook></ng-template>
-                                                </div>
-                                                <div id={{number}}_3 class=" inside dessert"><p>Dessert</p>
-                                                        <span *ngIf="recettesSemaine[number][6].titre !== 'vide'; else dontcook">{{recettesSemaine[number][6].titre}}</span>
-                                                        <ng-template #dontcook><dontcook></dontcook></ng-template>
-                                                </div>
+                                        <div id={{number}} _1 class=" inside starter">
+                                                <p>Entrée</p>
+                                                <span *ngIf="recettesSemaine[number][4].titre !== 'vide'; else dontcook">{{recettesSemaine[number][4].titre}}</span>
+                                                <ng-template #dontcook>
+                                                        <app-dontcook></app-dontcook>
+                                                </ng-template>
+                                        </div>
+                                        <div id={{number}} _2 class=" inside mainmeal">
+                                                <p>Plat</p>
+                                                <span *ngIf="recettesSemaine[number][5].titre !== 'vide'; else dontcook">{{recettesSemaine[number][5].titre}}</span>
+                                        </div>
+                                        <div id={{number}} _3 class=" inside dessert">
+                                                <p>Dessert</p>
+                                                <span *ngIf="recettesSemaine[number][6].titre !== 'vide'; else dontcook">{{recettesSemaine[number][6].titre}}</span>
+                                        </div>
                                 </td>
                         </tr>
 
                 </tbody>
         </table>
+
 </div>
+<!-- Appel component de la popup -->
+<app-popupcalendar></app-popupcalendar>

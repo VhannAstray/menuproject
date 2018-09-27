@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecetteInterface } from '../../shared/interfaces/recette-interface';
-import { Subscription, empty } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 import { RecetteService } from '../../shared/services/recette-service.service';
 
@@ -34,7 +34,7 @@ export class CalendarComponent implements OnInit {
         tempsPreparation: -1,
         titre: "vide",
         typeMeal: -1
-      }
+      };
       // Initialisation du tableau vide.
       for (let j = 1; j < 7; j++) {
         this.recettesSemaine[i][j] = emptyRecette;
