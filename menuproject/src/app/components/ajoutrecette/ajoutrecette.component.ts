@@ -132,7 +132,7 @@ export class AjoutrecetteComponent implements OnInit {
       console.log(this.recetteInsert);
       this.recetteService.assignRecPlanning(this.recetteInsert);
       this.ngxSmartModalService.getModal('popupcalendar').close();
-      window.location.href = 'http://localhost:4200/calendar';
+      window.location.href = 'http://localhost:4200/';
   }
 
 

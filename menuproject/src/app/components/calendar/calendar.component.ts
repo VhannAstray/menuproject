@@ -77,4 +77,10 @@ export class CalendarComponent implements OnInit {
   ngOnInit() {
   }
 
+  public detailId(id: number): void {
+    this.ngxSmartModalService.getModal('popupOne').open();
+    this.recetteService.sendId(id);
+    console.log('Id send is : ' + id);
+  }
+
 }
