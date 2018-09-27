@@ -120,7 +120,7 @@ export class RecetteService {
    * @param recette 
    */
   public removeRecPlanning(recette: any) {
-    this._api.delete(Constants._API_MENU_PLANNING,
+    this._api.delete<any>(Constants._API_MENU_PLANNING,
       recette      
     ).subscribe();
   }
