@@ -112,8 +112,16 @@ export class RecetteService {
   public assignRecPlanning(recette: any) {
     this._api.post<any>(Constants._API_MENU_PLANNING,
       recette      
-    );
-    console.log('je planifie');
-    console.log(recette);
+    ).subscribe();
+  }
+
+  /**
+   * Méthode pour retirer une recette du planning
+   * @param recette 
+   */
+  public removeRecPlanning(recette: any) {
+    this._api.delete(Constants._API_MENU_PLANNING,
+      recette      
+    ).subscribe();
   }
 }
