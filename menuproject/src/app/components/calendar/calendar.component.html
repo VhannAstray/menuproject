@@ -18,28 +18,49 @@
                         <!-- Pour le déjeuner -->
                         <tr>
                                 <th scope="row" class="type dej">Déjeuner</th>
-                                <td *ngFor="let number of [1,2,3,4,5,6,7]" class="Lundi">
+                                <td *ngFor="let number of [1,2,3,4,5,6,7]" class="Jour">
 
-                                        <div class=" inside starter">Entrée
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <ng-container *ngIf="recette.typeMeal==1 && recette.is_midi == 1;">
-                                                                <span >{{recette.titre}}</span>
-                                                        </ng-container>
-                                                </div>
-                                        </div>
-                                        <div class=" inside mainmeal">Plat
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <div *ngIf="recette.typeMeal==2 && recette.is_midi == 1;">
-                                                                <span>{{recette.titre}}</span>
+                                        <div id={{number}} _1 class=" inside starter">
+                                                <p>Entrée</p>
+                                                <span *ngIf="recettesSemaine[number][1].titre !== 'vide'; else dontcook1">{{recettesSemaine[number][1].titre}}</span>
+                                                <ng-template #dontcook1>
+                                                        <div class="dontcook">
+                                                                <div class="word">Je ne cuisine pas</div>
+                                                                <!-- Appel component de la popup -->
+                                                                <!-- <app-popupcalendar></app-popupcalendar> -->
+                                                                <!-- le (clik) déclenche l'appel de la popup qui est dans le popup component avec l'identifiant 'popup one'-->
+                                                                <button type="button" class="btn btn-link" (click)="open(number+'_1')"><i
+                                                                                class="fa fa-plus-circle"></i></button>
                                                         </div>
-                                                </div>
+                                                </ng-template>
                                         </div>
-                                        <div class=" inside dessert">Dessert
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <div *ngIf="recette.typeMeal==3 && recette.is_midi == 1;">
-                                                                <span>{{recette.titre}}</span>
+                                        <div id={{number}} _2 class=" inside mainmeal">
+                                                <p>Plat</p>
+                                                <span *ngIf="recettesSemaine[number][2].titre !== 'vide'; else dontcook2">{{recettesSemaine[number][2].titre}}</span>
+                                                <ng-template #dontcook2>
+                                                        <div class="dontcook">
+                                                                <div class="word">Je ne cuisine pas</div>
+                                                                <!-- Appel component de la popup -->
+                                                                <!-- <app-popupcalendar></app-popupcalendar> -->
+                                                                <!-- le (clik) déclenche l'appel de la popup qui est dans le popup component avec l'identifiant 'popup one'-->
+                                                                <button type="button" class="btn btn-link" (click)="open(number+'_2')"><i
+                                                                                class="fa fa-plus-circle"></i></button>
                                                         </div>
-                                                </div>
+                                                </ng-template>
+                                        </div>
+                                        <div id={{number}} _3 class=" inside dessert">
+                                                <p>Dessert</p>
+                                                <span *ngIf="recettesSemaine[number][3].titre !== 'vide'; else dontcook3">{{recettesSemaine[number][3].titre}}</span>
+                                                <ng-template #dontcook3>
+                                                        <div class="dontcook">
+                                                                <div class="word">Je ne cuisine pas</div>
+                                                                <!-- Appel component de la popup -->
+                                                                <!-- <app-popupcalendar></app-popupcalendar> -->
+                                                                <!-- le (clik) déclenche l'appel de la popup qui est dans le popup component avec l'identifiant 'popup one'-->
+                                                                <button type="button" class="btn btn-link" (click)="open(number+'_3')"><i
+                                                                                class="fa fa-plus-circle"></i></button>
+                                                        </div>
+                                                </ng-template>
                                         </div>
                                 </td>
                         </tr>
@@ -47,35 +68,56 @@
                         <!-- Pour le diner -->
                         <tr>
                                 <th scope="row" class="type dej">Dîner</th>
-                                <td *ngFor="let number of [1,2,3,4,5,6,7]" class="Lundi">
+                                <td *ngFor="let number of [1,2,3,4,5,6,7]" class="Jour">
 
-                                        <div class=" inside starter">Entrée
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <div *ngIf="recette.typeMeal==1 && recette.is_midi == 0">
-                                                                <span>{{recette.titre}}</span>
+                                        <div id={{number}} _1 class=" inside starter">
+                                                <p>Entrée</p>
+                                                <span *ngIf="recettesSemaine[number][4].titre !== 'vide'; else dontcook4">{{recettesSemaine[number][4].titre}}</span>
+                                                <ng-template #dontcook4>
+                                                        <div class="dontcook">
+                                                                <div class="word">Je ne cuisine pas</div>
+                                                                <!-- Appel component de la popup -->
+                                                                <!-- <app-popupcalendar></app-popupcalendar> -->
+                                                                <!-- le (clik) déclenche l'appel de la popup qui est dans le popup component avec l'identifiant 'popup one'-->
+                                                                <button type="button" class="btn btn-link" (click)="open(number+'_4')"><i
+                                                                                class="fa fa-plus-circle"></i></button>
                                                         </div>
-
-                                                </div>
+                                                </ng-template>
                                         </div>
-                                        <div class=" inside mainmeal">Plat
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <div *ngIf="recette.typeMeal==2 && recette.is_midi == 0;">
-                                                                       
+                                        <div id={{number}} _2 class=" inside mainmeal">
+                                                <p>Plat</p>
+                                                <span *ngIf="recettesSemaine[number][5].titre !== 'vide'; else dontcook5">{{recettesSemaine[number][5].titre}}</span>
+                                                <ng-template #dontcook5>
+                                                        <div class="dontcook">
+                                                                <div class="word">Je ne cuisine pas</div>
+                                                                <!-- Appel component de la popup -->
+                                                                <!-- <app-popupcalendar></app-popupcalendar> -->
+                                                                <!-- le (clik) déclenche l'appel de la popup qui est dans le popup component avec l'identifiant 'popup one'-->
+                                                                <button type="button" class="btn btn-link" (click)="open(number+'_5')"><i
+                                                                                class="fa fa-plus-circle"></i></button>
                                                         </div>
-                                                       
-                                                </div>
-                                                <dontcook></dontcook>
+                                                </ng-template>
                                         </div>
-                                        <div class=" inside dessert">Dessert
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <div *ngIf="recette.typeMeal==3 && recette.is_midi == 0;">
-                                                                <span>{{recette.titre}}</span>
+                                        <div id={{number}} _3 class=" inside dessert">
+                                                <p>Dessert</p>
+                                                <span *ngIf="recettesSemaine[number][6].titre !== 'vide'; else dontcook6">{{recettesSemaine[number][6].titre}}</span>
+                                                <ng-template #dontcook6>
+                                                        <div class="dontcook">
+                                                                <div class="word">Je ne cuisine pas</div>
+                                                                <!-- Appel component de la popup -->
+                                                                <!-- <app-popupcalendar></app-popupcalendar> -->
+                                                                <!-- le (clik) déclenche l'appel de la popup qui est dans le popup component avec l'identifiant 'popup one'-->
+                                                                <button type="button" class="btn btn-link" (click)="open(number+'_6')"><i
+                                                                                class="fa fa-plus-circle"></i></button>
                                                         </div>
-                                                </div>
+                                                </ng-template>
                                         </div>
                                 </td>
                         </tr>
 
                 </tbody>
         </table>
+
 </div>
+<!-- Appel component de la popup -->
+<app-popupcalendar></app-popupcalendar>

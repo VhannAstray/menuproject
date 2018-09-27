@@ -36,7 +36,7 @@ export class RecetteService {
     // si l'id est different de null alors on demande une seule recette avec l'identifiant donné
     if (id !== null) {
       console.log('pass par id' + id);
-      return this._api.get<RecetteInterface[]>(Constants._API_ROOT + '/' + id);
+      return this._api.get<RecetteInterface[]>(Constants._API_ROOT + id);
     } else {
     // sinon on retourne toutes les recettes
       return this._api.get<RecetteInterface[]>(
@@ -49,7 +49,7 @@ export class RecetteService {
     // si l'id est different de null alors on demande une seule recette avec l'identifiant donné
     if (id !== null) {
       console.log('pass par id de plat : ' + id);
-      return this._api.get<TypePlat>(Constants._API_TYPES_PLATS + '/' + id);
+      return this._api.get<TypePlat>(Constants._API_TYPES_PLATS + id);
     } else {
     // sinon on retourne toutes les recettes
       return this._api.get<TypePlat>(
