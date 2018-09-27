@@ -19,9 +19,16 @@ export class CalendarComponent implements OnInit {
 
   private recettesSubscription: Subscription;
 
+  private indiceCal: any;
+
   constructor(public ngxSmartModalService: NgxSmartModalService, private recetteService: RecetteService) {
     console.log('Chargement du component Calendar');
     this.recettesSemaine = []; // Nécessaire pour pouvoir utiliser la variable
+    this.indiceCal = {
+      planning_id: 0,
+      recettes_id: 0,
+      is_midi: 0
+    };
     for (let i = 1; i < 8; i++) {
       this.recettesSemaine[i] = []; // Nécessaire pour pouvoir utiliser la variable
 
@@ -81,6 +88,19 @@ export class CalendarComponent implements OnInit {
     this.ngxSmartModalService.getModal('popupOne').open();
     this.recetteService.sendId(id);
     console.log('Id send is : ' + id);
+  }
+
+  public delete(param: any): any {
+    this.indiceCal.planning_id = parseInt(param.substr(0, 1), 10);
+    const isMid = parseInt(param.substr(2, 1), 10);
+    if (isMid <= 3) {
+      this.indiceCal.is_midi = 1;
+    } else {
+      this.indiceCal.is_midi = 0;
+    }
+    this.indiceCal.recettes_id = parseInt(param.substr(4), 10);
+    this.recetteService.removeRecPlanning(this.indiceCal);
+
   }
 
 }
