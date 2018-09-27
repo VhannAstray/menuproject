@@ -38,6 +38,10 @@ export class AjoutrecetteComponent implements OnInit {
   private typePlatSubscription: Subscription;
   // private typeMealLabel: String[];
 
+
+  private calInfoSubscription: Subscription;
+  private calInfoStr: string;
+
   constructor(public ngxSmartModalService: NgxSmartModalService, private recetteService: RecetteService) {
     this.recettesSorted = [];
     this.typeMeal = {
@@ -62,6 +66,20 @@ export class AjoutrecetteComponent implements OnInit {
      // }
      // console.log(' les labels de plat ' + this.typeMealLabel);
     });
+
+    this.calInfoSubscription = this.recetteService.getCalInfo().subscribe((indiceCal) => {
+      this.calInfoStr = indiceCal;
+      console.log('info recues depuis le calendrier : ' + this.calInfoStr);
+      const calType = this.calInfoStr.substr(2);
+      console.log('substract est : ' + calType);
+      if (calType === '1' || calType === '4') {
+        this.sortRecette(1);
+      } else if (calType === '2' || calType === '5') {
+        this.sortRecette(2);
+      } else {
+        this.sortRecette(3);
+      }
+    });
   }
 
   ngOnInit() {
@@ -71,6 +89,15 @@ export class AjoutrecetteComponent implements OnInit {
     this.ngxSmartModalService.getModal('popupOne').open();
     this.recetteService.sendId(id);
     console.log('Id send is : ' + id);
+  }
+
+  public sortRecette(typeMeal: number): any {
+    this.recettesSorted = [];
+    for (const r of this.recettes) {
+      if (r.typeMeal === typeMeal) {
+          this.recettesSorted.push(r);
+      }
+    }
   }
 
 }
