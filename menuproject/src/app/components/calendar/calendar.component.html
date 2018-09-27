@@ -18,28 +18,16 @@
                         <!-- Pour le déjeuner -->
                         <tr>
                                 <th scope="row" class="type dej">Déjeuner</th>
-                                <td *ngFor="let number of [1,2,3,4,5,6,7]" class="Lundi">
+                                <td *ngFor="let number of [1,2,3,4,5,6,7]" class="Jour">
 
-                                        <div class=" inside starter">Entrée
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <ng-container *ngIf="recette.typeMeal==1 && recette.is_midi == 1;">
-                                                                <span >{{recette.titre}}</span>
-                                                        </ng-container>
-                                                </div>
+                                        <div id={{number}}_1 class=" inside starter"><p>Entrée</p>
+                                                <span>{{recettesSemaine[number][1].titre}}</span>
                                         </div>
-                                        <div class=" inside mainmeal">Plat
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <div *ngIf="recette.typeMeal==2 && recette.is_midi == 1;">
-                                                                <span>{{recette.titre}}</span>
-                                                        </div>
-                                                </div>
+                                        <div id={{number}}_2 class=" inside mainmeal"><p>Plat</p>
+                                                <span>{{recettesSemaine[number][2].titre}}</span>
                                         </div>
-                                        <div class=" inside dessert">Dessert
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <div *ngIf="recette.typeMeal==3 && recette.is_midi == 1;">
-                                                                <span>{{recette.titre}}</span>
-                                                        </div>
-                                                </div>
+                                        <div id={{number}}_3 class=" inside dessert"><p>Dessert</p>
+                                                <span>{{recettesSemaine[number][3].titre}}</span>
                                         </div>
                                 </td>
                         </tr>
@@ -47,31 +35,16 @@
                         <!-- Pour le diner -->
                         <tr>
                                 <th scope="row" class="type dej">Dîner</th>
-                                <td *ngFor="let number of [1,2,3,4,5,6,7]" class="Lundi">
+                                <td *ngFor="let number of [1,2,3,4,5,6,7]" class="Jour">
 
-                                        <div class=" inside starter">Entrée
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <div *ngIf="recette.typeMeal==1 && recette.is_midi == 0">
-                                                                <span>{{recette.titre}}</span>
-                                                        </div>
-
-                                                </div>
+                                        <div id={{number}}_4 class=" inside starter"><p>Entrée</p>
+                                                <span>{{recettesSemaine[number][4].titre}}</span>
                                         </div>
-                                        <div class=" inside mainmeal">Plat
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <div *ngIf="recette.typeMeal==2 && recette.is_midi == 0;">
-                                                                       
-                                                        </div>
-                                                       
-                                                </div>
-                                                <dontcook></dontcook>
+                                        <div id={{number}}_5 class=" inside mainmeal"><p>Plat</p>
+                                                <span>{{recettesSemaine[number][5].titre}}</span>
                                         </div>
-                                        <div class=" inside dessert">Dessert
-                                                <div *ngFor="let recette of recettesSemaine[number]">
-                                                        <div *ngIf="recette.typeMeal==3 && recette.is_midi == 0;">
-                                                                <span>{{recette.titre}}</span>
-                                                        </div>
-                                                </div>
+                                        <div id={{number}}_6 class=" inside dessert"><p>Dessert<p>
+                                                <span>{{recettesSemaine[number][6].titre}}</span>
                                         </div>
                                 </td>
                         </tr>

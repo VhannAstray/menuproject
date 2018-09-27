@@ -42,6 +42,7 @@ export class RecettesComponent implements OnInit {
    * Utilise pour afficher une string dans le html
    */
   private typeMealLabel: String[];
+  
 
   constructor(public ngxSmartModalService: NgxSmartModalService, private recetteService: RecetteService) {
 
