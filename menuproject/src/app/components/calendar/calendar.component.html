@@ -24,8 +24,8 @@
                                                 <p>Entrée</p>
                                                 <span *ngIf="recettesSemaine[number][1].titre !== 'vide'; else dontcook1">{{recettesSemaine[number][1].titre}}
                                                         <span>
-                                                                <button class="btn btn-info" (click)="detailId(recettesSemaine[number][1].id)">Détails</button>
-                                                                <button class="btn btn-info" (click)="delete(number+'_1_'+recettesSemaine[number][1].id)">Supprimer</button>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][1].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_1_'+recettesSemaine[number][1].id)"><i class="fa fa-trash"></i></button>
                                                         </span>
                                                 </span>
                                                 <ng-template #dontcook1>
@@ -43,8 +43,8 @@
                                                 <p>Plat</p>
                                                 <span *ngIf="recettesSemaine[number][2].titre !== 'vide'; else dontcook2">{{recettesSemaine[number][2].titre}}
                                                         <span>
-                                                                <button class="btn btn-info" (click)="detailId(recettesSemaine[number][2].id)">Détails</button>
-                                                                <button class="btn btn-info" (click)="delete(number+'_2_'+recettesSemaine[number][2].id)">Supprimer</button>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][2].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_2_'+recettesSemaine[number][2].id)"><i class="fa fa-trash"></i></button>
                                                         </span>
                                                 </span>
 
@@ -63,8 +63,8 @@
                                                 <p>Dessert</p>
                                                 <span *ngIf="recettesSemaine[number][3].titre !== 'vide'; else dontcook3">{{recettesSemaine[number][3].titre}}
                                                         <span>
-                                                                <button class="btn btn-info" (click)="detailId(recettesSemaine[number][3].id)">Détails</button>
-                                                                <button class="btn btn-info" (click)="delete(number+'_3_'+recettesSemaine[number][3].id)">Supprimer</button>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][3].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_3_'+recettesSemaine[number][3].id)"><i class="fa fa-trash"></i></button>
                                                         </span>
                                                 </span>
 
@@ -91,8 +91,8 @@
                                                 <p>Entrée</p>
                                                 <span *ngIf="recettesSemaine[number][4].titre !== 'vide'; else dontcook4">{{recettesSemaine[number][4].titre}}
                                                         <span>
-                                                                <button class="btn btn-info" (click)="detailId(recettesSemaine[number][4].id)">Détails</button>
-                                                                <button class="btn btn-info" (click)="delete(number+'_4_'+recettesSemaine[number][4].id)">Supprimer</button>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][4].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_4_'+recettesSemaine[number][4].id)"><i class="fa fa-trash"></i></button>
                                                         </span>
                                                 </span>
 
@@ -111,8 +111,8 @@
                                                 <p>Plat</p>
                                                 <span *ngIf="recettesSemaine[number][5].titre !== 'vide'; else dontcook5">{{recettesSemaine[number][5].titre}}
                                                         <span>
-                                                                <button class="btn btn-info" (click)="detailId(recettesSemaine[number][5].id)">Détails</button>
-                                                                <button class="btn btn-info" (click)="delete(number+'_5_'+recettesSemaine[number][5].id)">Supprimer</button>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][5].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_5_'+recettesSemaine[number][5].id)"><i class="fa fa-trash"></i></button>
                                                         </span>
                                                 </span>
 
@@ -131,8 +131,8 @@
                                                 <p>Dessert</p>
                                                 <span *ngIf="recettesSemaine[number][6].titre !== 'vide'; else dontcook6">{{recettesSemaine[number][6].titre}}
                                                         <span>
-                                                                <button class="btn btn-info" (click)="detailId(recettesSemaine[number][6].id)">Détails</button>
-                                                                <button class="btn btn-info" (click)="delete(number+'_6_'+recettesSemaine[number][6].id)">Supprimer</button>
+                                                                <button class="btn btn-link" (click)="detailId(recettesSemaine[number][6].id)"><i class="fa fa-search"></i></button>
+                                                                <button class="btn btn-link" (click)="delete(number+'_6_'+recettesSemaine[number][6].id)"><i class="fa fa-trash"></i></button>
                                                         </span>
                                                 </span>
 
