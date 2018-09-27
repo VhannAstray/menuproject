@@ -130,6 +130,8 @@ export class AjoutrecetteComponent implements OnInit {
         this.recetteInsert.is_midi = 0;
       }
       console.log(this.recetteInsert);
+      this.recetteService.assignRecPlanning(this.recetteInsert);
+      this.ngxSmartModalService.getModal('popupcalendar').close();
   }
 
 
