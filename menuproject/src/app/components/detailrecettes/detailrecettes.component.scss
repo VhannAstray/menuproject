@@ -8,8 +8,10 @@
     box-shadow: .1px 1px 2px #979797;
     border-radius: 15px 15px 15px 15px;
     padding-top: 6px;
-}
-.carterecette {
+}.recetteAll {
+    display: inline-block;
+   // margin: 20px;
+    //width: 40%;
     width: 270px;
     height: 400px;
     margin-top: 1em;
@@ -19,19 +21,86 @@
     box-shadow: .1px 2px 5px #979797;
     border-radius: 15px 15px 15px 15px;
     padding-top: 6px;
+    border: none;
 }
+
 img {
     width: 270px;
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
-.t {
-    font-size: 12px;
-    font-weight: 400;
-}
-.form-inline {
-    position: absolute;
-    margin-left: 28px;
+.btnSort {
+    margin-left:40%;
 }
 
+.btn {
+    margin-top: 30px;
+    margin-bottom: 2em;
+    background-color: #ffffff;
+    color: #04a3a3;
+    margin-right: 20px;
+}
+.btnEntree {
+    color:#04a3a3;
+    border: .1em solid #04a3a3;
+}
+.btnEntree:hover {
+    background-color: #04a3a3;
+    font-weight: 600;
+    color:#ffffff;
+}
+.btnPlat {
+    color: #e4572e;
+    border: .1em solid #e4572e;
+}
+.btnPlat:hover {
+    background-color: #e4572e;
+    font-weight: 600;
+    color:#ffffff;
+}
+.btnDessert {
+    color:#db9d47;
+    border: .1em solid #db9d47;
+}
+.btnDessert:hover {
+    background-color: #db9d47;
+    font-weight: 600;
+    color:#ffffff;
+}
+
+li {
+    border: solid 1px;
+}
+
+.titreRecette {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight:700;
+    color:#474747;
+    text-align: center;
+}
+.miscRecette {
+    margin-top: 12px;;
+    font-size: 13px;
+    color: #474747;
+    text-align: center;
+}
+.intitule {
+    font-weight: 600;
+}
+.btn-info {
+    margin-left: 105px;
+    margin-top: 25px;
+    color:#04a3a3;
+    text-align: center;
+    font-weight: 500;
+}
+.btn-info:hover {
+    margin-left: 105px;
+    margin-top: 25px;
+    background-color: #04a3a3;
+    font-weight: 600;
+    color:#ffffff;
+    text-align: center;
+}
