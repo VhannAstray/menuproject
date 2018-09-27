@@ -68,6 +68,13 @@ export class CalendarComponent implements OnInit {
     console.log(this.recettesSemaine);
   }
 
+  public open(param: any): any {
+    console.log(param);
+    console.log(this);
+    this.ngxSmartModalService.getModal('popupcalendar').open();
+    
+  }
+
   ngOnInit() {
   }
 

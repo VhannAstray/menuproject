@@ -9,6 +9,8 @@ import { NgxSmartModalService } from 'ngx-smart-modal';
 })
 export class DontcookComponent implements OnInit {
 
+  public infoCase: String;
+
   // injection du service de popup dans le constructeur
   constructor(public ngxSmartModalService: NgxSmartModalService) {
 
@@ -17,7 +19,9 @@ export class DontcookComponent implements OnInit {
   ngOnInit() {
   }
 
-  public open(): any {
+  public open(param: any): any {
+    console.log(param);
+    console.log(this);
     this.ngxSmartModalService.getModal('popupcalendar').open();
     
   }
