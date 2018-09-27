@@ -3,6 +3,8 @@ import { RecetteInterface } from '../../shared/interfaces/recette-interface';
 import { Subscription } from 'rxjs';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 import { RecetteService } from '../../shared/services/recette-service.service';
+import * as moment from 'moment';
+import 'moment/locale/fr';
 
 @Component({
   selector: 'calendar',
@@ -10,6 +12,8 @@ import { RecetteService } from '../../shared/services/recette-service.service';
   styleUrls: ['./calendar.component.scss']
 })
 export class CalendarComponent implements OnInit {
+
+  public now = moment().format('dddd Do MMMM');
 
   /** J'utilise un tableau à 2 dimensions pour gérer les recettes de la semaine :
   * La première dimensions correspond au jour de la semaine, 1 pour lundi et 7 pour dimanche
