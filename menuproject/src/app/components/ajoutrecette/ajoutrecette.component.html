@@ -2,10 +2,44 @@
 <!-- Component parent : popupcalendar.html -->
 <!-- Chemin complet pour y avoir accès : dontcook.html/popupcalendar.html/ajoutrecette.html -->
 <div class="container form-group form-inline">
-  <app-carterecette></app-carterecette>
-  <app-carterecette></app-carterecette>
-  <app-carterecette></app-carterecette>
-  <app-carterecette></app-carterecette>
-  <app-carterecette></app-carterecette>
-  <app-carterecette></app-carterecette>
+  <div class="container form-group form-inline">
+    <ul>
+      <li *ngFor="let recette of recettes" class="recetteAll">
+        <div class="titreRecette">
+          {{recette.titre}}
+        </div>
+        <div>
+          <span class="img"><img src="../../assets/crepe.jpg"></span>
+        </div>
+        <!--<div class="miscRecette">
+                        <ng-container *ngIf="recette.typeMeal === null; else second">Type de plat non indiqué </ng-container>
+                        <ng-template #second>
+                            <ng-container *ngIf="recette.typeMeal === 1; else third">Type de plat : {{typeMealLabel[1]}}</ng-container>
+                        </ng-template> 
+                        <ng-template #third>
+                            <ng-container *ngIf="recette.typeMeal === 2; else fourth">Type de plat : {{typeMealLabel[2]}}</ng-container>
+                        </ng-template>
+                        <ng-template #fourth>
+                            <ng-container *ngIf="recette.typeMeal === 3">Type de plat : {{typeMealLabel[0]}} </ng-container>
+                        </ng-template>
+                    </div>-->
+        <div class="miscRecette">
+          <i class="fa fa-user"></i>
+          Nombre de personnes : {{recette.nombrePersonnes}}
+        </div>
+        <div class="miscRecette">
+          <i class="fa fa-clock-o"></i>
+          Temps de préparation : {{recette.tempsPreparation}}min
+        </div>
+        <div class="miscRecette">
+          <i class="fa fa-clock-o"></i>
+          Temps de cuisson : {{recette.tempsCuisson}}min
+        </div>
+        <div>
+          <button class="btn btn-info" (click)="detailId(recette.id)">Détails</button>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
+<app-popup></app-popup>
