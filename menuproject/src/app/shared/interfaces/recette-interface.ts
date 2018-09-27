@@ -40,4 +40,9 @@ export interface RecetteInterface {
      * type : number
      */
     typeMeal: number;
+
+    /**
+     * @var number : Variable pour déterminer si la recette est du déjeuner ou du soir
+     */
+    isMidi?: number;
 }

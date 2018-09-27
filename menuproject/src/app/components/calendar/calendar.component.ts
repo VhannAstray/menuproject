@@ -24,17 +24,50 @@ export class CalendarComponent implements OnInit {
     this.recettesSemaine = []; // Nécessaire pour pouvoir utiliser la variable
     for (let i = 1; i < 8; i++) {
       this.recettesSemaine[i] = []; // Nécessaire pour pouvoir utiliser la variable
+
+      let emptyRecette: RecetteInterface;
+      emptyRecette = {
+        instructions: "Recette Vide",
+        isMidi: -1,
+        nombrePersonnes: -1,
+        tempsCuisson: -1,
+        tempsPreparation: -1,
+        titre: "vide",
+        typeMeal: -1
+      };
+      // Initialisation du tableau vide.
+      for (let j = 1; j < 7; j++) {
+        this.recettesSemaine[i][j] = emptyRecette;
+      }
+
       this.recettesSubscription = this.recetteService.getRecettesByPlanning(i).subscribe((recettes) => {
         console.log('Nombre de recettes du jour ' + ' ' + i + ' ' + 'Nb recettes :' + recettes.length);
         if (recettes.length != 0) {
+          // Reconstruction du planning complet.
           for (let j = 0; j < recettes.length; j++) {
-            this.recettesSemaine[i][j] = recettes[j];
+            // Si la recette est du midi.
+            if (recettes[j].isMidi == 1) {
+              if (recettes[j].typeMeal == 1) // Entrée
+                this.recettesSemaine[i][1] = recettes[j];
+              if (recettes[j].typeMeal == 2) // Plat
+                this.recettesSemaine[i][2] = recettes[j];
+              if (recettes[j].typeMeal == 3) // Dessert
+                this.recettesSemaine[i][3] = recettes[j];
+            } else { // Si la recette est du diner.
+              if (recettes[j].typeMeal == 1) // Entrée
+                this.recettesSemaine[i][4] = recettes[j];
+              if (recettes[j].typeMeal == 2)  // Plat
+                this.recettesSemaine[i][5] = recettes[j];
+              if (recettes[j].typeMeal == 3)  // Dessert
+                this.recettesSemaine[i][6] = recettes[j];
+            }
           }
         }
       });
     }
+    console.log(this.recettesSemaine);
   }
-  
+
   ngOnInit() {
   }
 
