@@ -38,6 +38,10 @@ export class AjoutrecetteComponent implements OnInit {
   private typePlatSubscription: Subscription;
   // private typeMealLabel: String[];
 
+
+  private calInfoSubscription: Subscription;
+  private calInfoStr: string;
+
   constructor(public ngxSmartModalService: NgxSmartModalService, private recetteService: RecetteService) {
     this.recettesSorted = [];
     this.typeMeal = {
@@ -61,6 +65,11 @@ export class AjoutrecetteComponent implements OnInit {
       //  this.typeMealLabel.push(this.typeMeal[i].libelle);
      // }
      // console.log(' les labels de plat ' + this.typeMealLabel);
+    });
+
+    this.calInfoSubscription = this.recetteService.getCalInfo().subscribe((indiceCal) => {
+      this.calInfoStr = indiceCal;
+      console.log('info recues depuis le calendrier : ' + this.calInfoStr);
     });
   }
 

@@ -26,6 +26,11 @@ export class RecetteService {
    */
   private idSubject: Subject<number> = new Subject<number>();
 
+  /**
+   * observable subject de type any, utilisé pour diffuser le type de plat et le jour depuis le calendrier
+   */
+  private calInfo: Subject<any> = new Subject<any>();
+
   constructor(private _api: HttpClient) { }
 
   /**
@@ -82,5 +87,20 @@ export class RecetteService {
         Constants._API_ROOT_PLANNING
       );
     }
+  }
+
+  /**
+   *  Méthode pour diffuser l'indice du type de plat et du jour
+   * @param info indice du jour et du type de plat venant du calendrier
+   */
+  public sendCalInfo(info: any) {
+    this.calInfo.next(info);
+  }
+
+  /**
+   *  Méthode pour s'abonner à l'indice du type de plat et du jour
+   */
+  public getCalInfo(): Observable <any> {
+    return this.calInfo.asObservable();
   }
 }
