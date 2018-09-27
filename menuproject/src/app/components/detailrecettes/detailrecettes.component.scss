@@ -32,6 +32,9 @@ img {
     margin-bottom: 15px;
 }
 
+
+
+
 .btnSort {
     margin-left:40%;
 }
@@ -83,7 +86,8 @@ li {
     text-align: center;
 }
 .miscRecette {
-    margin-top: 12px;;
+    margin-top: 12px;
+    
     font-size: 13px;
     color: #474747;
     text-align: center;
@@ -105,4 +109,41 @@ li {
     font-weight: 600;
     color:#ffffff;
     text-align: center;
+}
+
+
+
+figure 
+{
+  width: 120px;
+  
+  margin: 0 20px 0 0;
+  background: white;
+  border: 10px solid white;
+ 
+ 
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 1s ease;
+  position: relative;
+}
+
+figcaption 
+{
+  text-align: center;
+  display: block;
+  font-size: 12px;
+  font-style: italic;
+}
+figure:hover
+{
+ 
+  -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+}
+
+figure:focus
+{
+  outline: none;
+  -webkit-transform: rotate(-3deg) scale(2.5); -moz-transform: rotate(-3deg) scale(2.5);
+   -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+  z-index: 9999;
 }

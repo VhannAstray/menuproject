@@ -1,12 +1,14 @@
 <div class="container recettes">
-    <div class="container btnSort form-inline">
+   <div class="row">
         <ng-container *ngIf="typeMeal === null; else btns">Type de plat non indiqué </ng-container>
+        
         <ng-template #btns>
-            <button type="button" class="btn btnAll btnEntree" (click)="sortRecette(1)">{{typeMealLabel[1]}}</button>
-            <button type="button" class="btn btnAll btnPlat" (click)="sortRecette(2)">{{typeMealLabel[2]}}</button>
-            <button type="button" class="btn btnAll btnDessert" (click)="sortRecette(3)">{{typeMealLabel[0]}}</button>
+            <button type="button" class="btn btnAll btnEntree " (click)="sortRecette(1)">{{typeMealLabel[1]}}</button>
+            <button type="button" class="btn btnAll btnPlat " (click)="sortRecette(2)">{{typeMealLabel[2]}}</button>
+            <button type="button" class="btn btnAll btnDessert " (click)="sortRecette(3)">{{typeMealLabel[0]}}</button>
         </ng-template>
     </div>
+  
 
     <div class="container form-group form-inline">
         <ul>
