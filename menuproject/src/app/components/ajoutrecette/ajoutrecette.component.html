@@ -24,20 +24,18 @@
                         </ng-template>
                     </div>-->
         <div class="miscRecette">
-          <i class="fa fa-user"></i>
           Nombre de personnes : {{recette.nombrePersonnes}}
+          <i class="fa fa-user-o"></i>
         </div>
         <div class="miscRecette">
-          <i class="fa fa-clock-o"></i>
           Temps de préparation : {{recette.tempsPreparation}}min
         </div>
         <div class="miscRecette">
-          <i class="fa fa-clock-o"></i>
           Temps de cuisson : {{recette.tempsCuisson}}min
         </div>
-        <div>
+        <div class="form-group form-inline">
           <button class="btn btn-info" (click)="detailId(recette.id)">Détails</button>
-          <button class="btn btn-info">Sélectionner</button>
+          <button class="btn btn-info" (click)="add(recette.id)">Sélectionner</button>
         </div>
       </li>
     </ul>

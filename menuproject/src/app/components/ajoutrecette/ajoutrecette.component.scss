@@ -1,20 +1,58 @@
-img {
-    width: 250px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-
 .recetteAll {
     display: inline-block;
    // margin: 20px;
     //width: 40%;
-    width: 250px;
-    height: 345px;
+    width: 270px;
+    height: 400px;
     margin-top: 1em;
     margin-bottom: 1em;
     margin-left: 2em;
     margin-right: 2em;
-    box-shadow: .1px 1px 2px #979797;
+    box-shadow: .1px 2px 5px #979797;
     border-radius: 15px 15px 15px 15px;
     padding-top: 6px;
+    border: none;
+}
+
+img {
+    width: 270px;
+    height: 179.517px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.titreRecette {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight:700;
+    color:#474747;
+    text-align: center;
+}
+.miscRecette {
+    margin-top: 12px;;
+    font-size: 13px;
+    color: #474747;
+    text-align: center;
+}
+.intitule {
+    font-weight: 600;
+}
+.btn-info {
+    margin-top: 25px;
+    color:#04a3a3;
+    background-color: #ffffff;
+    border: #04a3a3 solid .1em;
+    text-align: center;
+    font-weight: 500;
+    margin-left: .2em;
+    margin-right: .2em;
+}
+.btn-info:hover {
+    margin-top: 25px;
+    background-color: #04a3a3;
+    font-weight: 600;
+    color:#ffffff;
+    text-align: center;
+}
+.form-inline {
+    margin-left: 32px;
 }
