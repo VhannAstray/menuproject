@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 // import constants
 import { Constants } from './../constants/constants';
@@ -44,7 +44,7 @@ export class RecetteService {
       console.log('pass par id' + id);
       return this._api.get<RecetteInterface[]>(Constants._API_ROOT + id);
     } else {
-    // sinon on retourne toutes les recettes
+      // sinon on retourne toutes les recettes
       return this._api.get<RecetteInterface[]>(
         Constants._API_ROOT
       );
@@ -57,7 +57,7 @@ export class RecetteService {
       console.log('pass par id de plat : ' + id);
       return this._api.get<TypePlat>(Constants._API_TYPES_PLATS + id);
     } else {
-    // sinon on retourne toutes les recettes
+      // sinon on retourne toutes les recettes
       return this._api.get<TypePlat>(
         Constants._API_TYPES_PLATS
       );
@@ -73,10 +73,10 @@ export class RecetteService {
     this.idSubject.next(id);
   }
 
-    /**
-  * Method qui permet de s'inscrire à la diffusion de l'id de la recette
-  */
-  public getId(): Observable <number> {
+  /**
+* Method qui permet de s'inscrire à la diffusion de l'id de la recette
+*/
+  public getId(): Observable<number> {
     return this.idSubject.asObservable();
   }
 
@@ -101,7 +101,7 @@ export class RecetteService {
   /**
    *  Méthode pour s'abonner à l'indice du type de plat et du jour
    */
-  public getCalInfo(): Observable <any> {
+  public getCalInfo(): Observable<any> {
     return this.calInfo.asObservable();
   }
 
@@ -109,10 +109,10 @@ export class RecetteService {
    * Méthode pour assigner une recette sur le planning
    * @param recette 
    */
-  public assignRecPlanning(recette: any) {
-    this._api.post<any>(Constants._API_MENU_PLANNING,
-      recette      
-    ).subscribe();
+  public assignRecPlanning(recette: any): Observable<any> {
+    return this._api.post<any>(Constants._API_MENU_PLANNING,
+      recette
+    );
   }
 
   /**
@@ -120,8 +120,6 @@ export class RecetteService {
    * @param recette 
    */
   public removeRecPlanning(recette: any) {
-    this._api.delete<any>(Constants._API_MENU_PLANNING,
-      recette      
-    ).subscribe();
+    return this._api.delete<any>(Constants._API_MENU_PLANNING + recette.planning_id + '/' + recette.recettes_id + '/' + recette.is_midi);
   }
 }

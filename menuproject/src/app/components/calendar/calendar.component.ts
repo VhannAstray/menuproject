@@ -103,8 +103,10 @@ export class CalendarComponent implements OnInit {
       this.indiceCal.is_midi = 0;
     }
     this.indiceCal.recettes_id = parseInt(param.substr(4), 10);
-    this.recetteService.removeRecPlanning(this.indiceCal);
-
+    this.recetteService.removeRecPlanning(this.indiceCal).subscribe();
+    console.log('Je vais essayer de supprimer ');
+    console.log(this.indiceCal);
+    window.location.reload(true);
   }
 
 }
