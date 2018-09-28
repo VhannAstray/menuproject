@@ -11,6 +11,7 @@
             
             
             </figure>
+         <div class="resume">
             <div class="miscRecette">
               <ng-container *ngIf="recette.typeMeal === null; else second">Type de plat non indiqué
               </ng-container>
@@ -24,6 +25,7 @@
                   <ng-container *ngIf="recette.typeMeal === 3"><span class="intitule">Type de plat : </span>{{typeMealLabel[0]}} </ng-container>
               </ng-template>
           </div>
+
     <div class="miscRecette">
       <span class="intitule">Nombre de personnes : </span>{{recette.nombrePersonnes}}
       <i class="fa fa-user-o"></i>
@@ -35,7 +37,7 @@
       <span class="intitule">Temps de cuisson : </span>{{recette.tempsCuisson}}min
     </div>
   </div>
-
+</div>
   <div class="card">
     <div>
       <span class="titre">Préparation:</span>
