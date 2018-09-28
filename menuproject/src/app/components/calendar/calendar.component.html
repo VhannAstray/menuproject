@@ -25,7 +25,7 @@
 
                                         <div id={{number}} _1 class=" inside starter">
                                                 <p>Entrée</p>
-                                                <span *ngIf="recettesSemaine[number][1].titre !== 'vide'; else dontcook1">{{recettesSemaine[number][1].titre}}
+                                                <span class="recettesSemaine" *ngIf="recettesSemaine[number][1].titre !== 'vide'; else dontcook1">{{recettesSemaine[number][1].titre}}
                                                         <span>
                                                                 <button class="btn btn-link" (click)="detailId(recettesSemaine[number][1].id)"><i class="fa fa-search"></i></button>
                                                                 <button class="btn btn-link" (click)="delete(number+'_1_'+recettesSemaine[number][1].id)"><i class="fa fa-trash"></i></button>
@@ -44,7 +44,7 @@
                                         </div>
                                         <div id={{number}} _2 class=" inside mainmeal">
                                                 <p>Plat</p>
-                                                <span *ngIf="recettesSemaine[number][2].titre !== 'vide'; else dontcook2">{{recettesSemaine[number][2].titre}}
+                                                <span class="recettesSemaine" *ngIf="recettesSemaine[number][2].titre !== 'vide'; else dontcook2">{{recettesSemaine[number][2].titre}}
                                                         <span>
                                                                 <button class="btn btn-link" (click)="detailId(recettesSemaine[number][2].id)"><i class="fa fa-search"></i></button>
                                                                 <button class="btn btn-link" (click)="delete(number+'_2_'+recettesSemaine[number][2].id)"><i class="fa fa-trash"></i></button>
@@ -64,7 +64,7 @@
                                         </div>
                                         <div id={{number}} _3 class=" inside dessert">
                                                 <p>Dessert</p>
-                                                <span *ngIf="recettesSemaine[number][3].titre !== 'vide'; else dontcook3">{{recettesSemaine[number][3].titre}}
+                                                <span class="recettesSemaine" *ngIf="recettesSemaine[number][3].titre !== 'vide'; else dontcook3">{{recettesSemaine[number][3].titre}}
                                                         <span>
                                                                 <button class="btn btn-link" (click)="detailId(recettesSemaine[number][3].id)"><i class="fa fa-search"></i></button>
                                                                 <button class="btn btn-link" (click)="delete(number+'_3_'+recettesSemaine[number][3].id)"><i class="fa fa-trash"></i></button>
@@ -87,12 +87,12 @@
 
                         <!-- Pour le diner -->
                         <tr>
-                                <th scope="row" class="type dej">Dîner</th>
+                                <th scope="row" class="type diner">Dîner</th>
                                 <td *ngFor="let number of [1,2,3,4,5,6,7]" class="Jour">
 
                                         <div id={{number}} _1 class=" inside starter">
                                                 <p>Entrée</p>
-                                                <span *ngIf="recettesSemaine[number][4].titre !== 'vide'; else dontcook4">{{recettesSemaine[number][4].titre}}
+                                                <span class="recettesSemaine" *ngIf="recettesSemaine[number][4].titre !== 'vide'; else dontcook4">{{recettesSemaine[number][4].titre}}
                                                         <span>
                                                                 <button class="btn btn-link" (click)="detailId(recettesSemaine[number][4].id)"><i class="fa fa-search"></i></button>
                                                                 <button class="btn btn-link" (click)="delete(number+'_4_'+recettesSemaine[number][4].id)"><i class="fa fa-trash"></i></button>
@@ -112,7 +112,7 @@
                                         </div>
                                         <div id={{number}} _2 class=" inside mainmeal">
                                                 <p>Plat</p>
-                                                <span *ngIf="recettesSemaine[number][5].titre !== 'vide'; else dontcook5">{{recettesSemaine[number][5].titre}}
+                                                <span class="recettesSemaine" *ngIf="recettesSemaine[number][5].titre !== 'vide'; else dontcook5">{{recettesSemaine[number][5].titre}}
                                                         <span>
                                                                 <button class="btn btn-link" (click)="detailId(recettesSemaine[number][5].id)"><i class="fa fa-search"></i></button>
                                                                 <button class="btn btn-link" (click)="delete(number+'_5_'+recettesSemaine[number][5].id)"><i class="fa fa-trash"></i></button>
@@ -132,7 +132,7 @@
                                         </div>
                                         <div id={{number}} _3 class=" inside dessert">
                                                 <p>Dessert</p>
-                                                <span *ngIf="recettesSemaine[number][6].titre !== 'vide'; else dontcook6">{{recettesSemaine[number][6].titre}}
+                                                <span class="recettesSemaine" *ngIf="recettesSemaine[number][6].titre !== 'vide'; else dontcook6">{{recettesSemaine[number][6].titre}}
                                                         <span>
                                                                 <button class="btn btn-link" (click)="detailId(recettesSemaine[number][6].id)"><i class="fa fa-search"></i></button>
                                                                 <button class="btn btn-link" (click)="delete(number+'_6_'+recettesSemaine[number][6].id)"><i class="fa fa-trash"></i></button>
