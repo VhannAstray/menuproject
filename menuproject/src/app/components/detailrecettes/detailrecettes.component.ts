@@ -27,12 +27,14 @@ export class DetailrecettesComponent implements OnInit {
 
   constructor(private recetteService: RecetteService) {
     // initialise la recette avec des valeurs vides
-    this.recette = {instructions: '',
-    titre: '',
-    nombrePersonnes: 0,
-    tempsCuisson: 0,
-    tempsPreparation: 0,
-    typeMeal: 1
+    this.recette = {
+      instructions: '',
+      titre: '',
+      nombrePersonnes: 0,
+      tempsCuisson: 0,
+      tempsPreparation: 0,
+      typeMeal: 1,
+      photos: ''
     };
 
   }
@@ -42,15 +44,16 @@ export class DetailrecettesComponent implements OnInit {
     this.recetteIdSubscription = this.recetteService.getId().subscribe((id) => {
       // utilise cet id pour faire un SELECT by id dans la bdd
       this.recetteSubscription = this.recetteService.getRecettes(id).subscribe((recette) => {
+        console.log('Recette : ' + JSON.stringify(recette));
         // donne la valeur venant de la bdd à this.recette
         this.recette = {
-          instructions: recette[0].instructions,
+          instructions: recette[0].hasOwnProperty('instructions') ? recette[0].instructions : '',
           titre: recette[0].titre,
           nombrePersonnes: recette[0].nombrePersonnes,
           tempsCuisson: recette[0].tempsCuisson,
           tempsPreparation: recette[0].tempsPreparation,
-          typeMeal: recette[0].typeMeal
-
+          typeMeal: recette[0].typeMeal,
+          photos: recette[0].photos
         };
       });
     });
