@@ -106,6 +106,7 @@ export class CalendarComponent implements OnInit {
     this.recetteService.removeRecPlanning(this.indiceCal);
     console.log('Je vais essayer de supprimer ');
     console.log(this.indiceCal);
+    window.location.reload(true);
   }
 
 }
