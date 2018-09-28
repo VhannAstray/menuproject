@@ -50,6 +50,8 @@ export class AjoutrecetteComponent implements OnInit {
 
   private recetteInsert: any;
 
+  public addText: String = "Sélectionner";
+
   constructor(public ngxSmartModalService: NgxSmartModalService, private recetteService: RecetteService) {
     this.recettesSorted = [];
     this.recetteInsert = {
@@ -110,29 +112,33 @@ export class AjoutrecetteComponent implements OnInit {
     this.recettesSorted = [];
     for (const r of this.recettes) {
       if (r.typeMeal === typeMeal) {
-          this.recettesSorted.push(r);
+        this.recettesSorted.push(r);
       }
     }
   }
 
   public add(recetteId: number): any {
+    this.addText = 'En cours ...';
     // console.log('passe par la dans le add');
-      this.recetteInsert.recettes_id = recetteId;
-      // console.log('recette id est : ' + this.recetteInsert.recettes_id);
-      // console.log(this.calInfoStr);
-      this.recetteInsert.planning_id = parseInt(this.calInfoStr.substr(0, 1), 10);
-      // console.log(this.recetteInsert.planning_id);
-      const midiStr = this.calInfoStr.substr(2);
-      if (midiStr === '1' || midiStr === '2' || midiStr === '3') {
-        this.recetteInsert.is_midi = 1;
+    this.recetteInsert.recettes_id = recetteId;
+    // console.log('recette id est : ' + this.recetteInsert.recettes_id);
+    // console.log(this.calInfoStr);
+    this.recetteInsert.planning_id = parseInt(this.calInfoStr.substr(0, 1), 10);
+    // console.log(this.recetteInsert.planning_id);
+    const midiStr = this.calInfoStr.substr(2);
+    if (midiStr === '1' || midiStr === '2' || midiStr === '3') {
+      this.recetteInsert.is_midi = 1;
 
-      } else {
-        this.recetteInsert.is_midi = 0;
-      }
-      console.log(this.recetteInsert);
-      this.recetteService.assignRecPlanning(this.recetteInsert);
+    } else {
+      this.recetteInsert.is_midi = 0;
+    }
+    console.log(this.recetteInsert);
+    this.recetteService.assignRecPlanning(this.recetteInsert).subscribe((recette) => {
+      this.addText = 'Sélectionner';
       this.ngxSmartModalService.getModal('popupcalendar').close();
       window.location.reload(true);
+    });
+
   }
 
 

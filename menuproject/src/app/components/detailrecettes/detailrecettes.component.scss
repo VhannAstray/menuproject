@@ -86,11 +86,14 @@ li {
     text-align: center;
 }
 .miscRecette {
-    margin-top: 12px;
+    margin-top: 5px;
     
     font-size: 13px;
     color: #474747;
     text-align: center;
+}
+.resume {
+    margin-top: 15px;
 }
 .intitule {
     font-weight: 600;
@@ -116,6 +119,7 @@ li {
 figure 
 {
   width: 270px;
+  
 
 
 
@@ -124,6 +128,7 @@ figure
   -webkit-transition: all 0.7s ease;
   -moz-transition: all 1s ease;
   position: relative;
+  margin-top: 10px;
 }
 
 
@@ -140,4 +145,11 @@ figure:focus
   -webkit-transform: rotate(-10deg) scale(2.5); -moz-transform: rotate(-10deg) scale(2.5);
    -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
   z-index: 9999;
+}
+.t {
+    font-size: 15px;
+    color: #474747;
+    padding-left: 6px;
+
+
 }

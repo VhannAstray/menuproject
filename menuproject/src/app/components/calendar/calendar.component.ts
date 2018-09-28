@@ -44,7 +44,8 @@ export class CalendarComponent implements OnInit {
         tempsCuisson: -1,
         tempsPreparation: -1,
         titre: "vide",
-        typeMeal: -1
+        typeMeal: -1,
+        photos: ''
       };
       // Initialisation du tableau vide.
       for (let j = 1; j < 7; j++) {
@@ -103,7 +104,7 @@ export class CalendarComponent implements OnInit {
       this.indiceCal.is_midi = 0;
     }
     this.indiceCal.recettes_id = parseInt(param.substr(4), 10);
-    this.recetteService.removeRecPlanning(this.indiceCal);
+    this.recetteService.removeRecPlanning(this.indiceCal).subscribe();
     console.log('Je vais essayer de supprimer ');
     console.log(this.indiceCal);
     window.location.reload(true);

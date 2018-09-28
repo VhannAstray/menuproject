@@ -9,7 +9,7 @@
           {{recette.titre}}
         </div>
         <div>
-          <span class="img"><img src="../../assets/crepe.jpg"></span>
+          <span class="img"><img src="../../assets/{{recette.photos}}"></span>
         </div>
         <!--<div class="miscRecette">
                         <ng-container *ngIf="recette.typeMeal === null; else second">Type de plat non indiqué </ng-container>
@@ -35,7 +35,7 @@
         </div>
         <div class="form-group form-inline">
           <button class="btn btn-info" (click)="detailId(recette.id)">Détails</button>
-          <button class="btn btn-info" (click)="add(recette.id)">Sélectionner</button>
+          <button class="btn btn-info" (click)="add(recette.id)">{{ addText }}</button>
         </div>
       </li>
     </ul>

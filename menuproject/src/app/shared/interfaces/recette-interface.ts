@@ -45,4 +45,9 @@ export interface RecetteInterface {
      * @var number : Variable pour déterminer si la recette est du déjeuner ou du soir
      */
     isMidi?: number;
+
+    /**
+     * @var String : Variable de l'url de la photo
+     */
+    photos: string;
 }
