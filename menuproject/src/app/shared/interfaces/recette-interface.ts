@@ -49,5 +49,5 @@ export interface RecetteInterface {
     /**
      * @var String : Variable de l'url de la photo
      */
-    photos?: string;
+    photos: string;
 }

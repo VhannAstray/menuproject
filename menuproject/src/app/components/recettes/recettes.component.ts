@@ -43,6 +43,7 @@ export class RecettesComponent implements OnInit {
    */
   private typeMealLabel: String[];
   
+  public recettesTemp: RecetteInterface;
 
   constructor(public ngxSmartModalService: NgxSmartModalService, private recetteService: RecetteService) {
 
@@ -58,20 +59,22 @@ export class RecettesComponent implements OnInit {
       this.recettes = recettes;
       // par défaut tri les recettes pour afficher les entrées
       this.sortRecette(1);
+      console.log("this recettes ");
+      console.log(this.recettes);
     });
 
     // récupération des types de plats
     this.typePlatSubscription = this.recetteService.getTypePlat().subscribe((typePlat) => {
       this.typeMeal = typePlat;
       // enregistre chaque libelle dans le tableau de string typeMealLabel
-      for (let i = 0; i < 3; i++ ) {
+      for (let i = 0; i < 3; i++) {
         this.typeMealLabel.push(this.typeMeal[i].libelle);
       }
       console.log(' les labels de plat ' + this.typeMealLabel);
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
 
@@ -86,6 +89,7 @@ export class RecettesComponent implements OnInit {
           this.recettesSorted.push(r);
       }
     }
+    console.log(this.recettesSorted);
   }
 
   /**

@@ -44,7 +44,8 @@ export class CalendarComponent implements OnInit {
         tempsCuisson: -1,
         tempsPreparation: -1,
         titre: "vide",
-        typeMeal: -1
+        typeMeal: -1,
+        photos: ''
       };
       // Initialisation du tableau vide.
       for (let j = 1; j < 7; j++) {
