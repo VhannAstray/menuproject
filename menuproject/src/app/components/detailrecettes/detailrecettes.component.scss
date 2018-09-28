@@ -1,0 +1,148 @@
+.card {
+    width: 650px;
+    height: 400px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    box-shadow: .1px 1px 2px #979797;
+    border-radius: 15px 15px 15px 15px;
+    padding-top: 6px;
+}
+.recetteAll {
+    display: inline-block;
+   // margin: 20px;
+    //width: 40%;
+    width: 270px;
+    height: 400px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    box-shadow: .1px 2px 5px #979797;
+    border-radius: 15px 15px 15px 15px;
+    padding-top: 6px;
+    border: none;
+}
+
+img {
+    width: 270px;
+    height: 179.517px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+
+
+
+.btnSort {
+    margin-left:40%;
+}
+
+.btn {
+    margin-top: 30px;
+    margin-bottom: 2em;
+    background-color: #ffffff;
+    color: #04a3a3;
+    margin-right: 20px;
+}
+.btnEntree {
+    color:#04a3a3;
+    border: .1em solid #04a3a3;
+}
+.btnEntree:hover {
+    background-color: #04a3a3;
+    font-weight: 600;
+    color:#ffffff;
+}
+.btnPlat {
+    color: #e4572e;
+    border: .1em solid #e4572e;
+}
+.btnPlat:hover {
+    background-color: #e4572e;
+    font-weight: 600;
+    color:#ffffff;
+}
+.btnDessert {
+    color:#db9d47;
+    border: .1em solid #db9d47;
+}
+.btnDessert:hover {
+    background-color: #db9d47;
+    font-weight: 600;
+    color:#ffffff;
+}
+
+li {
+    border: solid 1px;
+}
+
+.titreRecette {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight:700;
+    color:#474747;
+    text-align: center;
+}
+.miscRecette {
+    margin-top: 5px;
+    
+    font-size: 13px;
+    color: #474747;
+    text-align: center;
+}
+.resume {
+    margin-top: 15px;
+}
+.intitule {
+    font-weight: 600;
+}
+.btn-info {
+    margin-left: 105px;
+    margin-top: 25px;
+    color:#04a3a3;
+    text-align: center;
+    font-weight: 500;
+}
+.btn-info:hover {
+    margin-left: 105px;
+    margin-top: 25px;
+    background-color: #04a3a3;
+    font-weight: 600;
+    color:#ffffff;
+    text-align: center;
+}
+
+
+
+figure 
+{
+  width: 270px;
+  
+
+
+
+  margin: 0 0 0 0;
+  background: white;
+  -webkit-transition: all 0.7s ease;
+  -moz-transition: all 1s ease;
+  position: relative;
+  margin-top: 10px;
+}
+
+
+figure:hover
+{
+
+  -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0px 3px 10px #666;
+}
+
+figure:focus
+{
+    
+  outline: none;
+  -webkit-transform: rotate(-10deg) scale(2.5); -moz-transform: rotate(-10deg) scale(2.5);
+   -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+  z-index: 9999;
+}

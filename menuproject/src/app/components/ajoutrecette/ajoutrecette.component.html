@@ -1,0 +1,44 @@
+<!-- Affiche l'ensemble des recettes dans le popup, par type de repas-->
+<!-- Component parent : popupcalendar.html -->
+<!-- Chemin complet pour y avoir accès : dontcook.html/popupcalendar.html/ajoutrecette.html -->
+<div class="container form-group form-inline">
+  <div class="container form-group form-inline">
+    <ul>
+      <li *ngFor="let recette of recettesSorted" class="recetteAll">
+        <div class="titreRecette">
+          {{recette.titre}}
+        </div>
+        <div>
+          <span class="img"><img src="../../assets/{{recette.photos}}"></span>
+        </div>
+        <!--<div class="miscRecette">
+                        <ng-container *ngIf="recette.typeMeal === null; else second">Type de plat non indiqué </ng-container>
+                        <ng-template #second>
+                            <ng-container *ngIf="recette.typeMeal === 1; else third">Type de plat : {{typeMealLabel[1]}}</ng-container>
+                        </ng-template> 
+                        <ng-template #third>
+                            <ng-container *ngIf="recette.typeMeal === 2; else fourth">Type de plat : {{typeMealLabel[2]}}</ng-container>
+                        </ng-template>
+                        <ng-template #fourth>
+                            <ng-container *ngIf="recette.typeMeal === 3">Type de plat : {{typeMealLabel[0]}} </ng-container>
+                        </ng-template>
+                    </div>-->
+        <div class="miscRecette">
+          Nombre de personnes : {{recette.nombrePersonnes}}
+          <i class="fa fa-user-o"></i>
+        </div>
+        <div class="miscRecette">
+          Temps de préparation : {{recette.tempsPreparation}}min
+        </div>
+        <div class="miscRecette">
+          Temps de cuisson : {{recette.tempsCuisson}}min
+        </div>
+        <div class="form-group form-inline">
+          <button class="btn btn-info" (click)="detailId(recette.id)">Détails</button>
+          <button class="btn btn-info" (click)="add(recette.id)">{{ addText }}</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<app-popup></app-popup>
