@@ -1,0 +1,9 @@
+<p>
+  appel-pop works!
+</p>
+<!-- Appel component de la popup -->
+<app-popup></app-popup>
+
+<!-- Déclenche l'appel de la popup qui est dans le popup component avec l'identifiant 'popup one'-->
+<button (click)="ngxSmartModalService.getModal('popupOne').open()">Appel moi une popup</button>
+

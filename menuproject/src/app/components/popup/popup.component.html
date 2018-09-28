@@ -1,0 +1,15 @@
+<!-- Creation de la popup  avec identifiant ''popupOne-->
+
+<ngx-smart-modal #popupOne identifier="popupOne">
+  <div class="container myPop">
+    
+  
+    <ul>
+     
+      <app-detailrecettes></app-detailrecettes>
+      
+      
+    </ul>
+    <button class="btn btn-info" (click)="popupOne.close()">Close</button>
+  </div>
+</ngx-smart-modal>

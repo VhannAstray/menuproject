@@ -1,0 +1,35 @@
+<!-- Correspond à l'affichage de chaque recette sur une carte-->
+<!-- Component parent : ajoutrecette.html -->
+<!-- Chemin complet pour y avoir accès : dontcook.html/popupcalendar.html/ajoutrecette.html/carterecette.html -->
+<div class="carterecette">
+  <div>
+    <span class="titre">Titre : {{recette.titre}}</span>
+  </div>
+  <div>
+    <span class="img"><img src="../../assets/poire.jpg"></span>
+  </div>
+  <div>
+    <span class="t typemeal">Type de plat : {{recette.typeMeal}}</span>
+  </div>
+  <div>
+    <span class="t tps">Nombre de personnes : {{recette.nombrePersonnes}}</span>
+  </div>
+  <div>
+    <span class="t tps">Temps de préparation : {{recette.tempsPreparation}}min</span>
+  </div>
+  <div>
+    <span class="t tps">Temps de cuisson : {{recette.tempsCuisson}}min</span>
+  </div>
+  <div class="form-inline">
+    <!-- Ensemble des boutons de la carte-->
+
+    <div>
+      <button class="btn">Sélectionner</button>
+    </div>
+
+    <div>
+      <button class="btn">Détails</button>
+    </div>
+
+  </div>
+</div>
